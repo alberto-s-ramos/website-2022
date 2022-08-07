@@ -1,0 +1,236 @@
+@import "./common/variables";
+@import "./common/constants";
+@import "./common/mixins";
+
+.contact {
+  $this: &;
+
+  @include flex(flex-start, flex-start, column);
+  width: 100%;
+  margin-top: 70px;
+  position: relative;
+  max-width: 900px;
+
+  &__title {
+    h4, h1, h2 {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+    h1 {
+      display: inline;
+    }
+    h4, h2 {
+      position: relative;
+      margin-left: 0;
+      top: 30px;
+      z-index: -2;
+    }
+  }
+
+  &__form {
+    @include flex(flex-start, flex-start, column);
+    box-shadow: -5px 8px 80px rgba(0, 0, 0, 0.25) ;
+    width: 100%;
+    border-radius: $br-card;
+    background-color: $c-secondary-dark;
+    height: 500px;
+    padding: 20px;
+    row-gap: 10px;
+    position: relative;
+
+    &::before {
+      content : url(../assets/emoji-waving.webp);
+      transform: scale(0.4);
+      position: absolute;
+      top: -294px;
+      right: -148px;
+      animation-name: slideUp;
+      animation-duration: 1s;
+      opacity: 1;
+      z-index: -1;
+    }
+
+    @keyframes slideUp {
+      from {
+        top: 0;
+        right: -5%;
+        opacity: 0.5;
+      }
+    }
+
+    .email__address, .email__subject, .email__content {
+      width: 100%;
+      border: 0 solid;
+      border-radius: 5px;
+      padding: 8px;
+      background-color: $c-primary-dark;
+      z-index: 1;
+      font-size: $f-xxs;
+    }
+
+    .email__address.required,
+    .email__subject.required,
+    .email__content.required {
+      border: 2px solid crimson;
+    }
+
+    .email__address, .email__subject{
+      height: 35px;
+    }
+    .email__content {
+      height: 100%;
+      resize: none;
+    }
+
+    .email__sendBtn {
+      @extend .custom-button;
+      @include flex(center, center);
+      height: 40px;
+    }
+
+    #{$this}__footer {
+      @include flex(center, space-between, row);
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
+
+.contact__socials {
+  @include flex(center, center, row);
+  gap: 15px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+
+  li {
+    list-style: none;
+    position: relative;
+    width: 33px;
+    height: 33px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* -- Themes -- */
+/* Light */
+#light .contact {
+    &__form {
+      background-color: $c-primary-light;
+    }
+    .email__address, .email__subject, .email__content{
+      background-color: $c-secondary-light;
+      color: $c-primary-dark;
+    }
+
+    &__socials {
+      li {
+        width: 40px;
+        height: 40px;
+      }
+    }
+}
+
+/* Dark */
+#dark .contact {
+    &__form {
+      background-color: $c-secondary-dark;
+    }
+    .email__address, .email__subject, .email__content{
+      background-color: $c-primary-dark;
+      color: $c-primary-light;
+    }
+}
+
+/* -- Breakpoints -- */
+@media (min-width: $vw-xxs) {
+  .contact {
+    margin-top: 50px;
+    &__form {
+      &::before {
+        transform: scale(0.45);
+        right: -150px;
+        top: -194px;
+        z-index: 1;
+      }
+    }
+    .email__address, .email__subject {
+      width: 70%;
+    }
+
+    &__socials {
+      li {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: $vw-xs) {
+  .contact {
+    &__form {
+      &::before {
+        transform: scale(0.65);
+        right: -130px;
+        top: -235px;
+        z-index: 1;
+      }
+
+      .email__address, .email__subject, .email__content {
+        font-size: $f-xs;
+      }
+    }
+  }
+}
+
+@media (min-width: $vw-small) {
+  .contact {
+    &__form {
+      &::before {
+        transform: scale(0.7);
+        right: -110px;
+        top: -245px;
+      }
+    }
+  }
+}
+
+@media (min-width: $vw-medium) {
+  .contact {
+    &__form {
+      &::before {
+        transform: scale(0.8);
+        right: -80px;
+        top: -265px;
+      }
+    }
+  }
+}
+
+@media (min-width: $vw-large) {
+  .contact {
+    &__form {
+      &::before {
+        transform: scale(0.85);
+        right: -70px;
+        top: -273px;
+      }
+    }
+  }
+}
+
+@media (min-width: $vw-xl) {
+  .contact {
+    &__form {
+      &::before {
+        transform: scale(0.95);
+        right: -90px;
+        top: -295px;
+      }
+    }
+  }
+}

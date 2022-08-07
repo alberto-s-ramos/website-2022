@@ -1,0 +1,102 @@
+@import "./common/variables";
+@import "./common/mixins";
+@import "./common/theme";
+
+$transition-duration: 0.4s;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  transition: background-color 0s ease;
+}
+
+body, input, textarea {
+  font-family: 'Inter', sans-serif;
+}
+
+p, span, span b, button { font-size: $f-xxs; }
+
+h1 {  font-size: $f-large; }
+
+.app {
+  @include flex(center, space-between, column);
+  min-height: 100vH;
+  padding-top: 100px;
+
+  *, *::before {
+    transition: all $transition-duration ease;
+  }
+}
+
+.app__container {
+  @include flex(center, center, column);
+  width: 100vW;
+  transition: all 0.7s ease;
+  padding: 0 20px;
+}
+
+.footer {
+  position: static;
+  margin: 30px 0 5px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 200;
+  color: $c-tertiary-light;
+  opacity: 0.7;
+
+  p {
+    display: inline;
+    font-size: 15px !important;
+  }
+}
+
+/* -- Breakpoints -- */
+@media (min-width: $vw-xxs) {
+  .app__container {  max-width: $vw-xxs; }
+  h4 { font-size: $f-xxs;}
+
+}
+
+@media (min-width: $vw-xs) {
+  .app__container { max-width: $vw-xs; }
+
+  h1 { font-size: $f-xl; }
+  h4 { font-size: $f-xs;}
+}
+
+@media (min-width: $vw-small) {
+  .app { padding-top: 125px; }
+
+  .app__container { max-width: $vw-small; }
+}
+
+@media (min-width: $vw-medium) {
+  .app__container {  max-width: $vw-medium; }
+
+  h2 {  font-size: $f-small; }
+}
+
+@media (min-width: $vw-large) {
+  .app__container { max-width: $vw-medium; }
+
+  h1 { font-size: $f-xl; }
+  h2 { font-size: $f-medium; }
+  h4 { font-size: $f-small; }
+  p, span, span b, button { font-size: $f-xs; }
+}
+
+@media (min-width: $vw-xl) {
+  .app__container { max-width: $vw-large; }
+
+  h3 { font-size: $f-medium; }
+}

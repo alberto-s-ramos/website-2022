@@ -1,0 +1,81 @@
+@mixin flex ($align-items: center, $justify-content: center, $direction: row) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $direction;
+}
+
+@mixin moveX($x: 0){
+  -webkit-transform: translateX($x);
+  -moz-transform: translateX($x);
+  -ms-transform: translateX($x);
+  -o-transform: translateX($x);
+  transform: translateX($x);
+}
+
+@mixin moveY($y: 0){
+  -webkit-transform: translateY($y);
+  -moz-transform: translateY($y);
+  -ms-transform: translateY($y);
+  -o-transform: translateY($y);
+  transform: translateY($y);
+}
+
+@mixin rotate($deg: 0){
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: translateX($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin arrowUp(
+  $border-left: 10px,
+  $border-right: 10px,
+  $arrow-height: 20px
+) {
+  border-left: $border-left solid transparent;
+  border-right: $border-right solid transparent;
+  border-bottom: $arrow-height solid;
+}
+
+@mixin arrowLeft(
+  $border-top: 10px,
+  $border-bottom: 10px,
+  $arrow-height: 20px
+) {
+  border-top: $border-top solid transparent;
+  border-bottom: $border-bottom solid transparent;
+  border-right: $arrow-height solid;
+}
+
+@mixin arrowDown(
+  $border-left: 10px,
+  $border-right: 10px,
+  $arrow-height: 20px
+) {
+  border-left: $border-left solid transparent;
+  border-right: $border-right solid transparent;
+  border-top: $arrow-height solid;
+}
+
+@mixin fadeIn($sec: 0s){
+  animation-name: fadeIn;
+  animation-duration: $sec;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@mixin rotateAnim($sec: 0s, $deg: 0s){
+  animation-name: rotate;
+  animation-duration: $sec;
+
+  @keyframes rotate {
+    from { transform: rotate($deg); }
+    to { transform: rotate(0deg); }
+  }
+}
+

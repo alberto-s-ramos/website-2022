@@ -1,0 +1,45 @@
+@import "./common/variables";
+@import "./common/constants";
+
+.experience {
+  //max-width: 900px;
+
+  &__title {
+    h4, h1 {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+    h1 {
+      display: inline;
+    }
+    h4 {
+      position: relative;
+      margin-left: 3px;
+      top: 30px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 45px;
+    margin-top: 40px;
+    margin-bottom: 75px;
+  }
+}
+
+/* -- Breakpoints -- */
+@media (min-width: $vw-xs) {
+  .experience {
+    &__cards {
+      margin-top: 30px;
+    }
+  }
+}
+@media (min-width: $vw-medium) {
+  .experience {
+    &__cards {
+      gap: 45px;
+    }
+  }
+}

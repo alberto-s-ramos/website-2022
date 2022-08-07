@@ -1,0 +1,46 @@
+/* Colors */
+$c-highlighted-text: linear-gradient(280deg, #77B5FF 0%, #1272fd 100%);
+
+/* Light Theme */
+$c-primary-light: #FFFF;
+$c-secondary-light: #EBEBEB;
+$c-tertiary-light: #a2a2a2;
+
+$c-bg-primary-light: #FFFF;
+$c-text-primary-light: #2f2c3a;
+
+/* Dark Theme */
+$c-primary-dark: #302d33;
+$c-secondary-dark: #000;
+$c-tertiary-dark: #5a545e;
+
+$c-bg-primary-dark: $c-primary-dark;
+$c-text-primary-dark: #FFFF;
+
+/* Font Size */
+$f-xxs: 16px;
+$f-xs: 19px;
+$f-small: 26px;
+$f-medium: 33px;
+$f-large: 46px;
+$f-xl: 60px;
+
+/* Viewport */
+$vw-xxs: 480px;
+$vw-xs: 640px;
+$vw-small: 768px;
+$vw-medium: 1024px;
+$vw-large: 1280px;
+$vw-xl: 1680px;
+
+
+/* Components */
+/* Card */
+$c-card-bg-light: $c-secondary-light !default;
+$c-card-bg-dark: $c-secondary-dark;
+
+$c-card-icon-bg-light: $c-primary-light !default;
+$c-card-icon-bg-dark: $c-primary-dark;
+
+$br-card: 20px;
+

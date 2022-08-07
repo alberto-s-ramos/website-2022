@@ -1,0 +1,81 @@
+@import "../common/variables";
+@import "../common/mixins";
+@import "../common/constants";
+
+.hobby {
+  @extend .card;
+  @include flex(flex-start, center);
+  height: 300px;
+  max-width: 320px;
+}
+
+.hobby__icon {
+  @include flex(center, center, column);
+  @extend .card__icon;
+  width: 125px;
+  height: 125px;
+  top: -10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &::before {
+    transition: border-top-color 0s ease !important;
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 35px solid;
+    border-top-color: white;
+  }
+}
+
+.hobby__info {
+  @extend .card__info;
+  margin-top: 70px;
+  @include flex(center, center, column);
+  gap: 10px;
+}
+
+/* -- Themes -- */
+/* Light */
+#light .hobby {
+  &__icon {
+    &::before { border-top-color: $c-card-icon-bg-light; }
+  }
+}
+
+/* Dark */
+#dark .hobby {
+  &__icon {
+    &::before { border-top-color: $c-card-icon-bg-dark; }
+  }
+}
+
+/* -- Breakpoints -- */
+@media (min-width: $vw-medium) {
+  .hobby {
+    max-width: unset;
+    height: 350px;
+  }
+  .hobby__icon {
+    width: 170px;
+    height: 170px;
+  }
+  .hobby__info {
+    margin-top: 100px;
+  }
+}
+@media (min-width: $vw-large) {
+  .hobby {
+    height: 400px;
+  }
+  .hobby__icon {
+    width: 200px;
+    height: 200px;
+  }
+}
