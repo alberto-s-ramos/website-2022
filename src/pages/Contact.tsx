@@ -16,6 +16,8 @@ export function Contact() {
     const emailInput = useRef<HTMLInputElement>(null);
     const contentInput = useRef<HTMLTextAreaElement>(null);
 
+    const sentToast = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -43,10 +45,12 @@ export function Contact() {
         e.preventDefault();
         if(validateFields()){
             setSendingEmail(true);
+            sentToast.current!.classList.remove("toast__sent--trigger");
             emailjs.sendForm('service_lpht0s5', 'template_m8yj6bk', form.current!, 'Ng_lvRzLCb008pGkw')
                 .then((result) => {
                     console.log(`Email sent. HTTP Status: ${result.status}`);
                     clearFields();
+                    sentToast.current!.classList.add("toast__sent--trigger");
                     setSendingEmail(false);
                 }, (error) => {
                     console.log(error.text);
@@ -54,7 +58,7 @@ export function Contact() {
         }
     };
 
-    const clearFields = () => {
+    const clearFields = (): void => {
         setSubjectText('');
         setEmailText('');
         setContentText('');
@@ -74,6 +78,7 @@ export function Contact() {
                     className='email__address'
                     disabled={sendingEmail}
                     ref={emailInput}
+                    value={emailText}
                     onChange={ e => {
                         setEmailText(e.target.value);
                         emailInput.current!.classList.remove("required")
@@ -86,6 +91,7 @@ export function Contact() {
                     className='email__subject'
                     disabled={sendingEmail}
                     ref={subjectInput}
+                    value={subjectText}
                     onChange={ e => {
                         setSubjectText(e.target.value);
                         subjectInput.current!.classList.remove("required")
@@ -98,6 +104,7 @@ export function Contact() {
                     placeholder='Say something nice'
                     disabled={sendingEmail}
                     ref={contentInput}
+                    value={contentText}
                     onChange={ e => {
                         setContentText(e.target.value);
                         contentInput.current!.classList.remove("required")
@@ -105,7 +112,7 @@ export function Contact() {
                 />
 
                 <footer className='contact__footer'>
-                    <button className="email__sendBtn" type="submit">
+                    <button className="email__sendBtn" type="submit" disabled={sendingEmail}>
                         <span className='highlighted'>Send</span>
                     </button>
                     <ul className="contact__socials">
@@ -123,6 +130,9 @@ export function Contact() {
                     </ul>
                 </footer>
             </form>
+            <div className='toast__sent' ref={sentToast}>
+                <p>Sent ✅</p>
+            </div>
         </section>
     )
 }

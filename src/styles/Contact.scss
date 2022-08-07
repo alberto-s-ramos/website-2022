@@ -94,6 +94,52 @@
       margin-top: 10px;
     }
   }
+
+  .toast__sent {
+    position: fixed;
+    z-index: 100;
+    border-radius: 8px;
+    text-align: center;
+    width: 100px;
+    bottom: -100px;
+    display: none;
+    padding: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(158, 197, 158, 0.83);
+    backdrop-filter: blur(1px);
+
+    p {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+
+    &--trigger {
+      display: block;
+      animation-name: sentToast;
+      animation-duration: 3s;
+
+    }
+
+    @keyframes sentToast {
+      0% {
+        bottom: -100px;
+        display: block;
+      }
+      10% {
+        bottom: 0;
+      }
+      90% {
+        bottom: 0;
+        opacity: 1;
+      }
+      100% {
+        bottom: -100px;
+        display: none;
+        opacity: 0;
+      }
+    }
+  }
 }
 
 .contact__socials {
@@ -132,6 +178,10 @@
         height: 40px;
       }
     }
+
+    .toast__sent {
+      background-color: rgba(158, 197, 158, 0.83);
+    }
 }
 
 /* Dark */
@@ -142,6 +192,9 @@
     .email__address, .email__subject, .email__content{
       background-color: $c-primary-dark;
       color: $c-primary-light;
+    }
+    .toast__sent {
+      background-color: rgba(47, 72, 47, 0.83);
     }
 }
 
