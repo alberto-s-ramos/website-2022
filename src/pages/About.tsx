@@ -39,7 +39,7 @@ export function About() {
         <React.Fragment key={`video_${getTheme()}`}>
             <video
                 className='about__emoji-video'
-                autoPlay loop muted preload='auto'>
+                autoPlay loop muted playsInline preload='auto'>
                 <source src='/assets/emoji_light.mp4' type="video/mp4" />
             </video>
         </React.Fragment>
@@ -47,7 +47,7 @@ export function About() {
         <React.Fragment key={`video_${getTheme()}`}>
             <video
                 className='about__emoji-video'
-                autoPlay loop muted preload='auto'>
+                autoPlay loop muted playsInline preload='auto'>
                 <source src='/assets/emoji_dark.mp4' type="video/mp4" />
             </video>
         </React.Fragment>
