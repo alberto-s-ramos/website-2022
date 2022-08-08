@@ -26,7 +26,9 @@ export const chatMessages = [
         text:
             [
                 'If you fancy shortcuts, here’s a less exciting way of presenting what I’ve been up to:',
-                <a className="custom-button" key={'chat_btn-1'} href='/assets/Resume.pdf' target='_blank'><span className='highlighted' key={'chat_highlighted-msg-4'}>Resume</span></a>,
+                <a className="custom-button" key={'chat_btn-1'} href='/assets/Resume.pdf' target='_blank' aria-label='Resume'>
+                    <span className='highlighted' key={'chat_highlighted-msg-4'}>Resume</span>
+                </a>,
             ]
     }
 ];

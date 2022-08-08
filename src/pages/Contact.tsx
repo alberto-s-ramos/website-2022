@@ -112,18 +112,18 @@ export function Contact() {
                 />
 
                 <footer className='contact__footer'>
-                    <button className="email__sendBtn" type="submit" disabled={sendingEmail}>
+                    <button className="email__sendBtn" type="submit" disabled={sendingEmail} aria-label="Send Email">
                         <span className='highlighted'>Send</span>
                     </button>
                     <ul className="contact__socials">
                         <li>
-                            <a href="https://github.com/albertoramos1997" aria-label="CodePen" className="social" target="_blank" rel="noopener noreferrer" >
+                            <a href="https://github.com/albertoramos1997" aria-label="Github" className="social" target="_blank" rel="noopener noreferrer" >
                                 <GithubIcon/>
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://www.linkedin.com/in/alberto-s-ramos/" aria-label="CodePen" className="social" target="_blank" rel="noopener noreferrer" >
+                            <a href="https://www.linkedin.com/in/alberto-s-ramos/" aria-label="Linkedin" className="social" target="_blank" rel="noopener noreferrer" >
                                 <LinkedinIcon/>
                             </a>
                         </li>

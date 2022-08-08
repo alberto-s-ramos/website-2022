@@ -25,7 +25,6 @@ export function ProjectCard(
     }: ProjectCardProps) {
 
     function mapSVG(logo: string){
-        console.log(logo)
         switch(logo){
             case "github":
                 return <GithubIcon/>

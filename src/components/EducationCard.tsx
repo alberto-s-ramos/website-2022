@@ -49,7 +49,6 @@ export function EducationCard(
         else return ''
     }
 
-    console.log(id)
     return (
         <article className={`education ${id % 2 === 0 ? 'card--fromRight' : 'card--fromLeft'}`}>
             <div className='education__icon'>
