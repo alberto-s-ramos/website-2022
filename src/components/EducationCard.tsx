@@ -1,7 +1,7 @@
 import '../styles/components/EducationCard.scss'
-import { ReactComponent as ISCTEIcon } from '../assets/svgs/iscte.svg'
-import { ReactComponent as AaltoIcon } from '../assets/svgs/aalto.svg'
-import { ReactComponent as ISTIcon } from '../assets/svgs/ist.svg'
+import { ReactComponent as ISCTEIcon } from '../assets/svgs/ic-iscte.svg'
+import { ReactComponent as AaltoIcon } from '../assets/svgs/ic-aalto.svg'
+import { ReactComponent as ISTIcon } from '../assets/svgs/ic-ist.svg'
 
 type EducationCardProps = {
     id: number
@@ -32,11 +32,11 @@ export function EducationCard(
 
     function mapSVG(logo: string){
         switch(logo){
-            case "iscte":
+            case "ic-iscte":
                 return <ISCTEIcon/>
-            case "aalto":
+            case "ic-aalto":
                 return <AaltoIcon/>
-            case "ist":
+            case "ic-ist":
                 return <ISTIcon/>
             default:
                 return <ISCTEIcon fill="transparent"/>

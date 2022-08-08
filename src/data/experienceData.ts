@@ -8,7 +8,7 @@ export const profExperienceData = [
         technologies: 'HTML, Javascript, CSS, SCSS, node, Adobe Experience Manager (AEM), Git, Figma',
         from: 'Mar 2022',
         to: 'Present',
-        logo: 'netcentric'
+        logo: 'ic-netcentric'
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ export const profExperienceData = [
         technologies: 'Kotlin, Spring, Javascript, Typescript, React, node, Ruby, Postgres, MongoDB, Docker, Git',
         from: 'Jan 2021',
         to: 'Feb 2022',
-        logo: 'talkdesk'
+        logo: 'ic-talkdesk'
     }
 ]
 
@@ -34,7 +34,7 @@ export const educationData = [
         finalGrade: '18 / 20',
         from: 'Sep 2018',
         to: 'Feb 2022',
-        logo: 'ist',
+        logo: 'ic-ist',
         certificate: 'test'
     },
     {
@@ -47,7 +47,7 @@ export const educationData = [
         finalGrade: 'Not applicable',
         from: 'Sep 2019',
         to: 'Dec 2019',
-        logo: 'aalto',
+        logo: 'ic-aalto',
     },
     {
         id: 3,
@@ -59,7 +59,7 @@ export const educationData = [
         finalGrade: '15 / 20',
         from: 'Sep 2015',
         to: 'Jun 2018',
-        logo: 'iscte',
+        logo: 'ic-iscte',
         certificate: 'test'
     }
 ]

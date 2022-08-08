@@ -1,6 +1,6 @@
 import '../styles/components/ProfExperienceCard.scss'
-import { ReactComponent as TalkdeskIcon } from '../assets/svgs/talkdesk.svg'
-import { ReactComponent as NetcentricIcon } from '../assets/svgs/netcentric.svg'
+import { ReactComponent as TalkdeskIcon } from '../assets/svgs/ic-talkdesk.svg'
+import { ReactComponent as NetcentricIcon } from '../assets/svgs/ic-netcentric.svg'
 
 type ProfExperienceCardProps = {
     id: number,
@@ -29,9 +29,9 @@ export function ProfExperienceCard(
 
     function mapSVG(logo: string){
         switch(logo){
-            case "netcentric":
+            case "ic-netcentric":
                 return <NetcentricIcon/>
-            case "talkdesk":
+            case "ic-talkdesk":
                 return <TalkdeskIcon/>
             default:
                 return <TalkdeskIcon fill="transparent"/>
