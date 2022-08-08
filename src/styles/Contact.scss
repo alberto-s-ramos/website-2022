@@ -108,6 +108,7 @@
     transform: translate(-50%, -50%);
     background-color: rgba(158, 197, 158, 0.83);
     backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 
     p {
       margin-block-start: 0;

@@ -45,6 +45,7 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
     padding: 0;
     list-style: none;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: $navbar-br;
     box-shadow: 0 5px 5px  rgba(0, 0, 0, 0.1);
 
