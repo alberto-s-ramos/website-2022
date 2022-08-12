@@ -45,7 +45,7 @@ export function ProfExperienceCard(
     }
 
     return (
-        <article className='prof-experience card--fromBottom'>
+        <article className='prof-experience'>
             <div className='prof-experience__icon'>
                 {mapSVG(logo)}
             </div>

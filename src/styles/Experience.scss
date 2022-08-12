@@ -5,18 +5,7 @@
   //max-width: 900px;
 
   &__title {
-    h2, h1 {
-      margin-block-start: 0;
-      margin-block-end: 0;
-    }
-    h1 {
-      display: inline;
-    }
-    h2 {
-      position: relative;
-      margin-left: 2px;
-      top: 35px;
-    }
+    @extend .section__two-line-title;
   }
 
   &__cards {

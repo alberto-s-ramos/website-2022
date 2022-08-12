@@ -50,7 +50,7 @@ export function EducationCard(
     }
 
     return (
-        <article className='education card--fromBottom'>
+        <article className='education'>
             <div className='education__icon'>
                 {mapSVG(logo)}
             </div>

@@ -5,6 +5,7 @@
     background-image: $c-highlighted-text;
     color: transparent !important;
     -webkit-background-clip: text;
+    display: inline;
 }
 
 .custom-button {
@@ -26,6 +27,24 @@
     &:hover.disabled {  cursor: not-allowed; }
 }
 
+.section {
+    &__two-line-title {
+        h2, h1 {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+
+        h1 {
+            display: inline;
+        }
+        h2 {
+            position: relative;
+            margin-left: 2px;
+            top: 12px;
+        }
+    }
+}
+
 .card {
     @include flex(center, flex-end, column);
     width: auto;
@@ -39,33 +58,6 @@
         margin-block-start: 0;
         margin-block-end: 0;
     }
-
-    &--fromBottom {
-        animation-name: moveFromBottom;
-        animation-duration: 0.75s;
-    }
-
-    @keyframes moveFromBottom {
-        from { @include moveY(5%); }
-    }
-
-    &--fromLeft {
-        animation-name: moveFromLeft;
-        animation-duration: 0.75s;
-    }
-
-    @keyframes moveFromLeft {
-        from { @include moveX(-10%); }
-    }
-
-    &--fromRight {
-        animation-name: moveFromRight;
-        animation-duration: 0.75s;
-    }
-
-    @keyframes moveFromRight {
-        from { @include moveX(10%); }
-    }
 }
 
 .card__icon {
@@ -78,7 +70,7 @@
     border-radius: 100%;
 
     img, svg {
-        @include rotateAnim(0.8s, -20deg);
+        @include rotateAnim(1s, -20deg);
         width: 78%;
         height: 78%;
     }
