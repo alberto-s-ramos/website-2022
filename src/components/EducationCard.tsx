@@ -50,7 +50,7 @@ export function EducationCard(
     }
 
     return (
-        <article className={`education ${id % 2 === 0 ? 'card--fromRight' : 'card--fromLeft'}`}>
+        <article className='education card--fromBottom'>
             <div className='education__icon'>
                 {mapSVG(logo)}
             </div>

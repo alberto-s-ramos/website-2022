@@ -40,6 +40,15 @@
         margin-block-end: 0;
     }
 
+    &--fromBottom {
+        animation-name: moveFromBottom;
+        animation-duration: 0.75s;
+    }
+
+    @keyframes moveFromBottom {
+        from { @include moveY(5%); }
+    }
+
     &--fromLeft {
         animation-name: moveFromLeft;
         animation-duration: 0.75s;

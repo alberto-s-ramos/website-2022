@@ -45,7 +45,7 @@ export function ProfExperienceCard(
     }
 
     return (
-        <article className={`prof-experience ${id % 2 === 0 ? 'card--fromRight' : 'card--fromLeft'}`}>
+        <article className='prof-experience card--fromBottom'>
             <div className='prof-experience__icon'>
                 {mapSVG(logo)}
             </div>
