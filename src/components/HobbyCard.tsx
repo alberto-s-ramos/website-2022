@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import '../styles/components/HobbyCard.scss'
 
 type HobbyCardProps = {
@@ -9,7 +10,11 @@ type HobbyCardProps = {
 
 export function HobbyCard({id, title, description, imgUrl}: HobbyCardProps) {
     return (
-        <article className='hobby'>
+        <motion.article
+            initial={{ opacity: 0.75, scale: 0.75 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className='hobby'>
+
             <div className='hobby__icon'>
                 <img src={imgUrl} alt={title} loading='lazy'></img>
             </div>
@@ -18,7 +23,6 @@ export function HobbyCard({id, title, description, imgUrl}: HobbyCardProps) {
                 <h2>{title}</h2>
                 <p>{description}</p>
             </div>
-
-        </article>
+        </motion.article>
     );
 }

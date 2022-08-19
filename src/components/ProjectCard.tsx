@@ -1,6 +1,7 @@
 import '../styles/components/ProjectCard.scss';
 import { ReactComponent as CodesandboxIcon } from '../assets/svgs/ic-codesandbox.svg'
 import { ReactComponent as GithubIcon } from '../assets/svgs/ic-github.svg'
+import { motion } from 'framer-motion';
 
 type ProjectCardProps = {
     id: number,
@@ -45,7 +46,9 @@ export function ProjectCard(
 
     return(
         <article className='project'>
-            <img
+            <motion.img
+                initial={{ opacity: 0.75, scale: 0.75 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 className='project__image'
                 src={imgUrl}
                 alt={`${name} Header Image`}

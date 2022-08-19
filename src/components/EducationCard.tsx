@@ -2,6 +2,7 @@ import '../styles/components/EducationCard.scss'
 import { ReactComponent as ISCTEIcon } from '../assets/svgs/ic-iscte.svg'
 import { ReactComponent as AaltoIcon } from '../assets/svgs/ic-aalto.svg'
 import { ReactComponent as ISTIcon } from '../assets/svgs/ic-ist.svg'
+import { motion } from 'framer-motion'
 
 type EducationCardProps = {
     id: number
@@ -50,7 +51,9 @@ export function EducationCard(
     }
 
     return (
-        <article className='education'>
+        <motion.article className='education'
+                        initial={{ opacity: 0.75, scale: 0.85 }}
+                        whileInView={{ opacity: 1, scale: 1 }}>
             <div className='education__icon'>
                 {mapSVG(logo)}
             </div>
@@ -78,6 +81,6 @@ export function EducationCard(
             <div className='education__dates'>
                 <p>{from} - {to}</p>
             </div>
-        </article>
+        </motion.article>
     );
 }

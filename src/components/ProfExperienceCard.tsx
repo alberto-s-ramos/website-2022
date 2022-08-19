@@ -1,6 +1,7 @@
 import '../styles/components/ProfExperienceCard.scss'
 import { ReactComponent as TalkdeskIcon } from '../assets/svgs/ic-talkdesk.svg'
 import { ReactComponent as NetcentricIcon } from '../assets/svgs/ic-netcentric.svg'
+import {motion, MotionValue} from 'framer-motion'
 
 type ProfExperienceCardProps = {
     id: number,
@@ -45,7 +46,9 @@ export function ProfExperienceCard(
     }
 
     return (
-        <article className='prof-experience'>
+        <motion.article className='prof-experience'
+                        initial={{ opacity: 0.75, scale: 0.85 }}
+                        whileInView={{ opacity: 1, scale: 1 }}>
             <div className='prof-experience__icon'>
                 {mapSVG(logo)}
             </div>
@@ -68,6 +71,6 @@ export function ProfExperienceCard(
                 </p>
             </div>
 
-        </article>
+        </motion.article>
     );
 }
