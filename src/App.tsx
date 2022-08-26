@@ -21,22 +21,22 @@ function App() {
     }, [getTheme()])
 
     return (
-        <main className='app' id={getTheme()}>
-            <Router>
-                <Navbar/>
-                <div className="app__container">
-                    <Routes>
-                        <Route path="/" element={<About/>} />
-                        <Route path="/experience" element={<Experience/>} />
-                        <Route path="/projects" element={<Projects/>} />
-                        <Route path="/Contact" element={<Contact/>} />
-                    </Routes>
-                </div>
-                <footer className='footer'>
-                    © <p>{new Date().getFullYear()} Alberto Ramos</p>
-                </footer>
-            </Router>
-        </main>
+        <div className="app__container" id={getTheme()}>
+        <Router>
+            <Navbar/>
+            <main className='app' >
+                  <Routes>
+                      <Route path="/" element={<About/>} />
+                      <Route path="/experience" element={<Experience/>} />
+                      <Route path="/projects" element={<Projects/>} />
+                      <Route path="/Contact" element={<Contact/>} />
+                  </Routes>
+            </main>
+            <footer className='footer'>
+                © <p>{new Date().getFullYear()} Alberto Ramos</p>
+            </footer>
+        </Router>
+        </div>
     )
 }
 
