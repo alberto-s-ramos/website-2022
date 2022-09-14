@@ -53,7 +53,8 @@ export function EducationCard(
     return (
         <motion.article className='education'
                         initial={{ opacity: 0.75, scale: 0.85 }}
-                        whileInView={{ opacity: 1, scale: 1 }}>
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}>
             <div className='education__icon'>
                 {mapSVG(logo)}
             </div>

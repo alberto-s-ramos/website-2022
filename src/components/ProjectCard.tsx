@@ -49,6 +49,7 @@ export function ProjectCard(
             <motion.img
                 initial={{ opacity: 0.75, scale: 0.75 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
                 className='project__image'
                 src={imgUrl}
                 alt={`${name} Header Image`}

@@ -13,6 +13,7 @@ export function HobbyCard({id, title, description, imgUrl}: HobbyCardProps) {
         <motion.article
             initial={{ opacity: 0.75, scale: 0.75 }}
             whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
             className='hobby'>
 
             <div className='hobby__icon'>

@@ -48,7 +48,8 @@ export function ProfExperienceCard(
     return (
         <motion.article className='prof-experience'
                         initial={{ opacity: 0.75, scale: 0.85 }}
-                        whileInView={{ opacity: 1, scale: 1 }}>
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}>
             <div className='prof-experience__icon'>
                 {mapSVG(logo)}
             </div>
