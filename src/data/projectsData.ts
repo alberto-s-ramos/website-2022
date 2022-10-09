@@ -8,7 +8,7 @@ export const projectsData = [
         links: [
             {
                 platform: 'github',
-                platformLink: 'google.com'
+                platformLink: 'https://github.com/albertoramos1997/website-2022'
             }
         ]
     },
