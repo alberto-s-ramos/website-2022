@@ -4,8 +4,8 @@ export const profExperienceData = [
         companyName: 'Cognizant Netcentric',
         location: 'Berlin, Germany',
         title: 'Frontend Developer',
-        description: 'Had the opportunity to be assigned to a project for one of the company’s biggest clients, using the following technologies:',
-        technologies: 'HTML, Javascript, CSS, SCSS, Redux, Handlebars (hbs), node, Adobe Experience Manager (AEM), Git, Figma',
+        description: 'Worked on projects from completely different industries — Adhesive technologies and Automotive — developing and maintaining their websites across multiple markets. The technologies used include:',
+        technologies: 'React, Typescript, Javascript, HTML, CSS, SCSS, Redux, handlebars, node, AEM, Git',
         from: 'Mar 2022',
         to: 'Present',
         logo: 'ic-netcentric'
@@ -15,7 +15,7 @@ export const profExperienceData = [
         companyName: 'Talkdesk',
         location: 'Lisbon, Portugal',
         title: 'Fullstack Developer',
-        description: 'During my time at Talkdesk, I helped with the development and maintenance of a well-structured microservice system that supported company\'s digital communication channels — SMS, Live Chat and Email — using technologies such as:',
+        description: 'During my time at Talkdesk, I helped with the development and maintenance of a well-structured microservice system that supported the company\'s digital communication channels — SMS, Live Chat and Email — using technologies such as:',
         technologies: 'Kotlin, Spring, Javascript, Typescript, React, node, Ruby, Postgres, MongoDB, Docker, Git',
         from: 'Jan 2021',
         to: 'Feb 2022',
@@ -63,3 +63,4 @@ export const educationData = [
         certificate: 'test'
     }
 ]
+// Language: typescript :)

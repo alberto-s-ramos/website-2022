@@ -16,9 +16,9 @@ export const chatMessages = [
             [
                 'Originally from Portugal, currently living in ',
                 <span className='highlighted' key={'chat_highlighted-msg-3'}> Berlin, Germany</span>,
-                ', I consider myself a hardworking person with a creativity vein and attention to detail.',
+                ', I am a hardworking person with a creativity vein and attention to detail. A motivated fast-learner that thrives on a positive and supportive team environment.',
                 <br key={'chat_br-1'}/>, <br key={'chat_br-2'}/>,
-                'Excited by the entire spectrum of software development, with a special interest in',
+                'Curious and excited by the entire spectrum of software development, with a special interest in',
                 <span className='highlighted' key={'chat_highlighted-msg-4'}> frontend</span>,
                 ',',
                 <span className='highlighted' key={'chat_highlighted-msg-5'}> design</span>,
