@@ -26,10 +26,10 @@ export function Projects() {
     return(
         <section className='projects'>
             <div className='projects__title'>
-                <h2 className='highlighted'>Personal</h2> <br/>
+                <h2 className='highlighted'><b>Personal</b></h2> <br/>
                 <h1 className='highlighted'>Projects</h1>
             </div>
-            <h2>A collection of small side projects I've been doing on my free time since 2021, to either learn new technologies or further develop existing ones.</h2>
+            <h4 className='projects__description'>A collection of small side projects I occupy my free with, to either learn new technologies or further develop existing ones.</h4>
 
             <div className='projects__list'>
                 {projects}

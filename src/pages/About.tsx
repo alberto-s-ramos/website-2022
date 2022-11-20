@@ -69,7 +69,7 @@ export function About() {
 
             <div className='about__hobby-section'>
                 <h1 className='highlighted'>Hobbies</h1> <br/>
-                <h2>When I’m not sitting on a gamer’s chair with dim light coding all day, here’s what I’m probably doing...</h2>
+                <h4 className='about__hobby-section__description'>When I’m not sitting on a gamer’s chair with dim light coding all day, here’s what I’m probably doing...</h4>
             </div>
 
             <div className='about__hobbies'>

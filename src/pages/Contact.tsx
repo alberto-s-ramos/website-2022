@@ -67,7 +67,7 @@ export function Contact() {
     return(
         <section className='contact'>
             <div className='contact__title'>
-                <h2 className='highlighted'>Let's get in</h2> <br/>
+                <h2 className='highlighted'><b>Let's get in</b></h2> <br/>
                 <h1 className='highlighted'>Touch</h1>
             </div>
             <form className='contact__form' onSubmit={sendEmail} ref={form}>

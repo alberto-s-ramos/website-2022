@@ -45,7 +45,7 @@ export function Experience() {
     return(
         <section className='experience'>
             <div className='experience__title'>
-                <h2 className='highlighted'>Professional</h2> <br/>
+                <h2 className='highlighted'><b>Professional</b></h2> <br/>
                 <h1 className='highlighted'>Experience</h1>
             </div>
             <div className='experience__cards'>

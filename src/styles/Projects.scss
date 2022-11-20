@@ -28,8 +28,8 @@
 
 @media (min-width: $vw-medium) {
   .projects {
-    &__list {
-      //grid-template-columns: 1fr 1fr;
+    &__description {
+      width: 65%;
     }
   }
 }

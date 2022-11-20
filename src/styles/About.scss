@@ -270,6 +270,12 @@ $c-chat-dark: $c-secondary-dark;
 
 @media (min-width: $vw-medium) {
   .about {
+    &__hobby-section {
+      &__description {
+        width: 65%;
+      }
+    }
+
     &__hobbies {
       grid-template-columns: 1fr 1fr 1fr;
     }
