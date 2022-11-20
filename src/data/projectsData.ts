@@ -1,5 +1,11 @@
 export const projectsData = [
     {
+        id: 0,
+        imgUrl: '/assets/blender-p1.gif',
+        name: '3D.me',
+        description: 'Well, the title says it all - a stylised 3D (better looking) version of me. Using Blender, I made this model to practice the creation of stylised characters and simple scenes, using the tool.',
+    },
+    {
         id: 1,
         imgUrl: '/assets/header-website.webp',
         name: 'Personal Website',
