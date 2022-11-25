@@ -1,6 +1,6 @@
-import '../styles/components/ProjectCard.scss';
-import { ReactComponent as CodesandboxIcon } from '../assets/svgs/ic-codesandbox.svg'
-import { ReactComponent as GithubIcon } from '../assets/svgs/ic-github.svg'
+import './ProjectCard.scss';
+import { ReactComponent as CodesandboxIcon } from '../../../assets/svgs/ic-codesandbox.svg'
+import { ReactComponent as GithubIcon } from '../../../assets/svgs/ic-github.svg'
 import { motion } from 'framer-motion';
 
 type ProjectCardProps = {

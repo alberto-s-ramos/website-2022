@@ -1,8 +1,8 @@
-import { ProfExperienceCard } from "../components/ProfExperienceCard";
-import { profExperienceData, educationData } from '../data/experienceData'
-import '../styles/Experience.scss'
+import { ProfExperienceCard } from "../../components/cards/profExperienceCard/ProfExperienceCard";
+import { profExperienceData, educationData } from '../../data/experienceData'
+import './Experience.scss'
 import {useEffect, useRef} from "react";
-import { EducationCard } from "../components/EducationCard";
+import { EducationCard } from "../../components/cards/educationCard/EducationCard";
 import {useScroll} from "framer-motion";
 
 export function Experience() {

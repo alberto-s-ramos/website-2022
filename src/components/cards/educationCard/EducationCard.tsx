@@ -1,7 +1,7 @@
-import '../styles/components/EducationCard.scss'
-import { ReactComponent as ISCTEIcon } from '../assets/svgs/ic-iscte.svg'
-import { ReactComponent as AaltoIcon } from '../assets/svgs/ic-aalto.svg'
-import { ReactComponent as ISTIcon } from '../assets/svgs/ic-ist.svg'
+import './EducationCard.scss'
+import { ReactComponent as ISCTEIcon } from '../../../assets/svgs/ic-iscte.svg'
+import { ReactComponent as AaltoIcon } from '../../../assets/svgs/ic-aalto.svg'
+import { ReactComponent as ISTIcon } from '../../../assets/svgs/ic-ist.svg'
 import { motion } from 'framer-motion'
 
 type EducationCardProps = {

@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
-import { useTheme } from "./context/ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 import { BrowserRouter as Router, Routes,  Route } from "react-router-dom";
-import { About } from "./pages/About";
-import { Experience } from "./pages/Experience";
-import { Projects } from "./pages/Projects";
-import { Contact } from "./pages/Contact";
-import { Navbar } from "./components/Navbar";
+import { About } from "../pages/about/About";
+import { Experience } from "../pages/experience/Experience";
+import { Projects } from "../pages/projects/Projects";
+import { Contact } from "../pages/contact/Contact";
+import { Navbar } from "../components/navbar/Navbar";
+import { Footer } from "../components/footer/Footer";
 
-import './styles/App.scss'
+import './App.scss'
 
 function App() {
     const { getTheme } = useTheme();
@@ -32,9 +33,7 @@ function App() {
                       <Route path="/Contact" element={<Contact/>} />
                   </Routes>
             </main>
-            <footer className='footer'>
-                © <p>{new Date().getFullYear()} Alberto Ramos</p>
-            </footer>
+            <Footer/>
         </Router>
         </div>
     )

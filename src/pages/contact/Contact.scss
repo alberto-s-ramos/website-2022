@@ -1,6 +1,6 @@
-@import "./common/variables";
-@import "./common/constants";
-@import "./common/mixins";
+@import "../../styles/common/variables";
+@import "../../styles/common/constants";
+@import "../../styles/common/mixins";
 
 .contact {
   $this: &;
@@ -27,7 +27,7 @@
     position: relative;
 
     &::before {
-      content : url(../assets/emoji-waving.webp);
+      content : url(../../assets/emoji-waving.webp);
       transform: scale(0.4);
       position: absolute;
       top: -294px;

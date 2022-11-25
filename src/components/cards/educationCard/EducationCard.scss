@@ -1,6 +1,6 @@
-@import "../common/variables";
-@import "../common/mixins";
-@import "../common/constants";
+@import "../../../styles/common/variables";
+@import "../../../styles/common/mixins";
+@import "../../../styles/common/constants";
 
 .education {
   @extend .card;

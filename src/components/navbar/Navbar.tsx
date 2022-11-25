@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/components/Navbar.scss";
-
-import {useTheme} from "../context/ThemeContext";
+import "./Navbar.scss";
+import { useTheme } from "../../context/ThemeContext";
 
 export function Navbar() {
     const [isNavExpanded, setIsNavExpanded] = useState(false)

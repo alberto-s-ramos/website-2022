@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import '../styles/components/HobbyCard.scss'
+import './HobbyCard.scss'
 
 type HobbyCardProps = {
     id: number,

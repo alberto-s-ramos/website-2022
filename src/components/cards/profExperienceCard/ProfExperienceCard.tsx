@@ -1,6 +1,6 @@
-import '../styles/components/ProfExperienceCard.scss'
-import { ReactComponent as TalkdeskIcon } from '../assets/svgs/ic-talkdesk.svg'
-import { ReactComponent as NetcentricIcon } from '../assets/svgs/ic-netcentric.svg'
+import './ProfExperienceCard.scss'
+import { ReactComponent as TalkdeskIcon } from '../../../assets/svgs/ic-talkdesk.svg'
+import { ReactComponent as NetcentricIcon } from '../../../assets/svgs/ic-netcentric.svg'
 import {motion, MotionValue} from 'framer-motion'
 
 type ProfExperienceCardProps = {

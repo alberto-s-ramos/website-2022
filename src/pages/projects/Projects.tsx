@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
-import { ProjectCard } from "../components/ProjectCard";
-import { projectsData } from '../data/projectsData'
-
-import '../styles/Projects.scss'
-import {educationData} from "../data/experienceData";
-import {EducationCard} from "../components/EducationCard";
+import { ProjectCard } from "../../components/cards/projectCard/ProjectCard";
+import { projectsData } from '../../data/projectsData'
+import './Projects.scss'
 
 export function Projects() {
 

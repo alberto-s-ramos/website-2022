@@ -5,7 +5,7 @@ export const profExperienceData = [
         location: 'Berlin, Germany',
         title: 'Frontend Developer',
         description: 'Worked on projects from completely different industries — Adhesive technologies and Automotive — developing and maintaining their websites across multiple markets. The technologies used include:',
-        technologies: 'React, Typescript, Javascript, HTML, CSS, SCSS, Redux, handlebars, node, AEM, Git',
+        technologies: 'React, Typescript, Javascript, GraphQL, Redux, RxJS, HTML, CSS, SCSS, handlebars, node, AEM, Git',
         from: 'Mar 2022',
         to: 'Present',
         logo: 'ic-netcentric'

@@ -1,9 +1,8 @@
-@import "./common/variables";
-@import "./common/constants";
+@import "../../styles/common/variables";
+@import "../../styles/common/constants";
+@import "../../styles/common/mixins";
 
 .experience {
-  //max-width: 900px;
-
   &__title {
     @extend .section__two-line-title;
   }

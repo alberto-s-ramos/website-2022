@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
-import '../styles/Contact.scss'
-import { ReactComponent as LinkedinIcon } from '../assets/svgs/ic-linkedin.svg'
-import { ReactComponent as GithubIcon } from '../assets/svgs/ic-github.svg'
+import './Contact.scss'
+import { ReactComponent as LinkedinIcon } from '../../assets/svgs/ic-linkedin.svg'
+import { ReactComponent as GithubIcon } from '../../assets/svgs/ic-github.svg'
 import emailjs from '@emailjs/browser';
 
 export function Contact() {
