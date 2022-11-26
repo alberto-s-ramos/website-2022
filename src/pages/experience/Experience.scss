@@ -3,16 +3,40 @@
 @import "../../styles/common/mixins";
 
 .experience {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 25px;
+
   &__title {
-    @extend .section__two-line-title;
+    @include flex(flex-start, flex-end, column);
+    position: relative;
+    z-index: 0;
+    height: auto;
+    background-color: $c-primary-dark;
+    transition: background-color 0s ease !important;
+    padding: 20px 0 20px;
   }
 
   &__cards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 45px;
-    margin-top: 40px;
-    margin-bottom: 75px;
+    gap: 25px;
+  }
+}
+
+/* -- Themes -- */
+/* Light */
+#light .experience {
+  &__title {
+    background: $c-primary-light;
+  }
+}
+
+/* Dark */
+
+#dark .experience-card {
+  &__title {
+    background: $c-primary-dark;
   }
 }
 
@@ -24,10 +48,24 @@
     }
   }
 }
-@media (min-width: $vw-medium) {
+
+@media (min-width: $vw-small) {
   .experience {
+    grid-template-columns: 1fr 1fr;
+    &__title {
+      position: sticky;
+      display: flex;
+      justify-content: flex-end;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      padding: 120px 0 20px;
+      height: 280px;
+      box-shadow: 0 35px 45px -55px black;
+    }
+
     &__cards {
-      gap: 45px;
+      padding-top: 5px;
     }
   }
 }

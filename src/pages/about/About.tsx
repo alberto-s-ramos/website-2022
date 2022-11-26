@@ -1,6 +1,6 @@
 import './About.scss'
-import { chatMessages } from "../../data/chatMessages"
-import { hobbiesData, hobbiesDataProps } from "../../data/hobbiesData"
+import { chatMessages } from "./data/chatMessages"
+import { hobbiesData, hobbiesDataProps } from "./data/hobbiesData"
 import { HobbyCard } from "../../components/cards/hobbyCard/HobbyCard";
 import { useTheme } from "../../context/ThemeContext";
 import React, { useEffect } from "react";

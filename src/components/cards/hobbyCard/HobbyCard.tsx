@@ -21,7 +21,7 @@ export function HobbyCard({id, title, description, imgUrl}: HobbyCardProps) {
             </div>
 
             <div className='hobby__info'>
-                <h2><b>{title}</b></h2>
+                <h2>{title}</h2>
                 <p>{description}</p>
             </div>
         </motion.article>

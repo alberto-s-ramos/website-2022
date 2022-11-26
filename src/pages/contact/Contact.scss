@@ -226,6 +226,8 @@
 
 @media (min-width: $vw-small) {
   .contact {
+    padding-top: 120px;
+
     &__form {
       &::before {
         transform: scale(0.7);

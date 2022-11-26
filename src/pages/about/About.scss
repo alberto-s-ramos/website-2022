@@ -242,6 +242,8 @@ $c-chat-dark: $c-secondary-dark;
 
 @media (min-width: $vw-small) {
   .about {
+    padding-top: 120px;
+
     &__intro {
       @include flex(center, center, row);
     }

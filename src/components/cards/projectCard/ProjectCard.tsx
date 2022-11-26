@@ -2,6 +2,7 @@ import './ProjectCard.scss';
 import { ReactComponent as CodesandboxIcon } from '../../../assets/svgs/ic-codesandbox.svg'
 import { ReactComponent as GithubIcon } from '../../../assets/svgs/ic-github.svg'
 import { motion } from 'framer-motion';
+import {generateKey} from "../../../utils/app.utils";
 
 type ProjectCardProps = {
     id: number,
@@ -18,7 +19,6 @@ type ProjectLink = {
 
 export function ProjectCard(
     {
-        id,
         imgUrl,
         name,
         description,
@@ -37,7 +37,7 @@ export function ProjectCard(
     }
 
     const platformLinks = links?.map(link =>
-        <li>
+        <li key={generateKey()}>
             <a href={link.platformLink} aria-label={`Link to ${link.platform}`} className="social" target="_blank" rel="noopener noreferrer" >
                 {mapSVG(link.platform)}
             </a>

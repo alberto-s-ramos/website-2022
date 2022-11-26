@@ -15,7 +15,7 @@ export function Navbar() {
                              to="/"
                              onClick={() => setIsNavExpanded(false)}
                     >
-                        <b>About</b>
+                        About
                     </NavLink>
                 </li>
                 <li key='nav-link-2'>
@@ -23,7 +23,7 @@ export function Navbar() {
                              to="/experience"
                              onClick={() => setIsNavExpanded(false)}
                     >
-                        <b>Experience</b>
+                        Experience
                     </NavLink>
                 </li>
                <li key='nav-link-3'>
@@ -31,7 +31,7 @@ export function Navbar() {
                             to="/projects"
                             onClick={() => setIsNavExpanded(false)}
                    >
-                       <b>Projects</b>
+                       Projects
                    </NavLink>
                </li>
                <li key='nav-link-4'>
@@ -39,7 +39,7 @@ export function Navbar() {
                             to="/contact"
                             onClick={() => setIsNavExpanded(false)}
                    >
-                       <b>Contact</b>
+                       Contact
                    </NavLink>
                </li>
             </ul>

@@ -20,6 +20,8 @@
 /* -- Breakpoints -- */
 @media (min-width: $vw-small) {
   .projects {
+    padding-top: 120px;
+
     &__list {
       grid-template-columns: 1fr 1fr;
     }

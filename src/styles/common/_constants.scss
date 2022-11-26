@@ -8,6 +8,14 @@
     display: inline;
 }
 
+span.contrast {
+    font-weight: 600;
+}
+
+span.low-contrast {
+    color: $c-tertiary-dark;
+}
+
 .custom-button {
     padding: 15px 35px;
     border-radius: 8px;
@@ -47,12 +55,9 @@
 
 .card {
     @include flex(center, flex-end, column);
-    width: auto;
-    padding: 40px;
     background-color: $c-card-bg-light;
     border-radius: $br-card;
     position: relative;
-    text-align: center;
 
     p, h2 {
         margin-block-start: 0;
@@ -62,17 +67,13 @@
 
 .card__icon {
     @include flex(center, center, column);
-    transition: background-color 0s ease !important;
     background-color: $c-primary-light;
-    width: 250px;
-    height: 250px;
     position: absolute;
     border-radius: 100%;
 
-    img, svg {
+    img,
+    svg {
         @include rotateAnim(1s, -20deg);
-        width: 78%;
-        height: 78%;
     }
 }
 
@@ -90,13 +91,18 @@
 
 #light .card {
     background-color: $c-card-bg-light;
+    border: 2px solid rgba($c-tertiary-light, 0.35);
+
+    span.contrast {
+        color: $c-secondary-dark;
+    }
+
+    span.low-contrast {
+        color: $c-tertiary-dark;
+    }
 
     &__info {
         p { color: $c-tertiary-dark; }
-        span.contrast {
-            color: $c-secondary-dark;
-            font-weight: 900;
-        }
     }
 
     &__icon {  background-color: $c-card-icon-bg-light; }
@@ -104,10 +110,6 @@
     &__dates {
         background-color: $c-card-icon-bg-light;
         p { color: $c-tertiary-dark; }
-        span.contrast {
-            color: $c-secondary-dark;
-            font-weight: 900;
-        }
     }
 }
 
@@ -121,13 +123,18 @@
 
 #dark .card {
     background-color: $c-card-bg-dark;
+    border: 2px solid rgba($c-card-bg-dark, 0.35);
+
+    span.contrast {
+        color: $c-primary-light;
+    }
+
+    span.low-contrast {
+        color: $c-tertiary-light;
+    }
 
     &__info {
         p { color: $c-tertiary-light; }
-        span.contrast {
-            color: $c-primary-light;
-            font-weight: 900;
-        }
     }
 
     &__icon {
@@ -138,10 +145,6 @@
     &__dates {
         background-color: $c-primary-dark;
         p { color: $c-tertiary-light; }
-        span.contrast {
-            color: $c-primary-light;
-            font-weight: 900;
-        }
     }
 }
 

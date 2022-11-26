@@ -2,7 +2,7 @@
 @import "../styles/common/mixins";
 @import "../styles/common/theme";
 
-$transition-duration: 0.4s;
+$transition-duration: 0.5s;
 
 * { box-sizing: border-box; }
 
@@ -19,7 +19,7 @@ body {
 }
 
 body, input, textarea {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p, span {
@@ -27,17 +27,32 @@ h1, h2, h3, h4, h5, h6, p, span {
   margin-block-end: 0;
 }
 
-h2, h4 {
-  font-weight: 100;
+h1, h2 {
+  font-weight: 800;
 }
 
-p, span, span b, button { font-size: $f-xxs; }
+h2 {
+  font-weight: 700;
+}
+
+h4>span, h4>a>span {
+  font-weight: 600;
+}
+
+h3, h4, button, b {
+  font-weight: 600;
+}
+
+p, span {
+  font-size: $f-xxs;
+  font-weight: 300;
+}
 
 h1 {  font-size: $f-large; }
 
 .app {
   @include flex(center, space-between, column);
-  min-height: 100vH;
+  min-height: 93vH;
   width: 100%;
   padding-top: 100px;
 
@@ -49,7 +64,6 @@ h1 {  font-size: $f-large; }
 .app__container {
   @include flex(center, center, column);
   width: 100vW;
-  transition: all 0.7s ease;
   padding: 0 20px;
 }
 
@@ -85,8 +99,7 @@ h1 {  font-size: $f-large; }
 }
 
 @media (min-width: $vw-small) {
-  .app { padding-top: 125px; }
-
+  .app { padding-top: 0; }
   .app__container { max-width: $vw-small; }
 }
 
