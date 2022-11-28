@@ -51,6 +51,14 @@
 
 @media (min-width: $vw-small) {
   .experience {
+    &__title {
+      height: 260px;
+    }
+  }
+}
+
+@media (min-width: $vw-medium) {
+  .experience {
     grid-template-columns: 1fr 1fr;
     &__title {
       position: sticky;
@@ -60,7 +68,6 @@
       width: 100%;
       z-index: 1;
       padding: 120px 0 20px;
-      height: 280px;
       box-shadow: 0 35px 45px -55px black;
     }
 
