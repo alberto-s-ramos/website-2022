@@ -21,6 +21,7 @@ $cardPadding: 30px;
   top: -10px;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: background-color 0s ease !important;
 
   img, svg {
     width: 78%;
