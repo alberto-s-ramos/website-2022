@@ -12,12 +12,12 @@ export const profExperienceData = [
         description: 'Worked on projects from completely different industries — Adhesive technologies and Automotive — developing and maintaining their websites across multiple markets.',
         projects: [
             {
-                title: 'Hyundai',
-                description: 'Worked on the maintenance and operations team for Hyundai’s websites, where I had to solve critical issues in very short timeframes. Also supported with the development of new features for the websites.',
+                title: 'Automotive project',
+                description: 'Worked on the maintenance and operations team for the client’s websites, where I had to solve critical issues in very short timeframes. Also supported with the development of new features for their websites using React, Typescript, Redux and GraphQL.',
             },
             {
-                title: 'Henkel Adhesives',
-                description: 'Developed and enhanced the websites for Henkel’s Adhesive Technologies business unit. Had to work very close with the Backend team to build new functionalities on top of the Adobe Experience Manager (AEM) platform.',
+                title: 'Adhesive technologies project',
+                description: 'Developed and enhanced the websites for the client’s Adhesive Technologies business unit. Had to work very close with the Backend team to build new functionalities on top of the Adobe Experience Manager (AEM) platform.',
             }
         ],
         technologies: [
