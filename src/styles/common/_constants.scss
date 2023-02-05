@@ -69,7 +69,7 @@ span.low-contrast {
     @include flex(center, center, column);
     background-color: $c-primary-light;
     position: absolute;
-    border-radius: 100%;
+    border-radius: 20%;
 
     img,
     svg {
