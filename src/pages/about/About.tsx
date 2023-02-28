@@ -56,25 +56,24 @@ export function About() {
     const hour = `${today.getHours()}:${today.getMinutes() > 10 ? today.getMinutes() : '0'+today.getMinutes()}`
 
     return(
-        <section className='about'>
+        <section id="about" className='about'>
             <div className='about__intro'>
                 {videoComponent}
                 <div className="chat">
                     <div className="chat-wrapper">
-                        <span className="chat__date"><b>Today</b> {hour}</span>
+                        <span className="chat__date">Today {hour}</span>
                         {messages}
                     </div>
                 </div>
             </div>
 
-            <div className='about__hobby-section'>
-                <h1 className='highlighted'>Hobbies</h1> <br/>
-                <h4 className='about__hobby-section__description'>When I’m not sitting on a gamer’s chair with dim light coding all day, here’s what I’m probably doing...</h4>
-            </div>
+            {/*<div className='about__hobby-section'>*/}
+            {/*    <h1>Hobbies</h1> <br/>*/}
+            {/*</div>*/}
 
-            <div className='about__hobbies'>
-                {hobbies}
-            </div>
+            {/*<div className='about__hobbies'>*/}
+            {/*    {hobbies}*/}
+            {/*</div>*/}
         </section>
     )
 }

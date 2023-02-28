@@ -58,6 +58,7 @@ span.low-contrast {
     background-color: $c-card-bg-light;
     border-radius: $br-card;
     position: relative;
+    box-shadow: 0 5px 25px  rgba(0, 0, 0, 0.25) ;
 
     p, h2 {
         margin-block-start: 0;
@@ -90,8 +91,7 @@ span.low-contrast {
 }
 
 #light .card {
-    background-color: $c-card-bg-light;
-    border: 2px solid rgba($c-tertiary-light, 0.35);
+    background-color: $c-bg-primary-light;
 
     span.contrast {
         color: $c-secondary-dark;
@@ -105,7 +105,7 @@ span.low-contrast {
         p { color: $c-tertiary-dark; }
     }
 
-    &__icon {  background-color: $c-card-icon-bg-light; }
+    &__icon {  background-color: $c-secondary-light; }
 
     &__dates {
         background-color: $c-card-icon-bg-light;
@@ -123,7 +123,6 @@ span.low-contrast {
 
 #dark .card {
     background-color: $c-card-bg-dark;
-    border: 2px solid rgba($c-card-bg-dark, 0.35);
 
     span.contrast {
         color: $c-primary-light;

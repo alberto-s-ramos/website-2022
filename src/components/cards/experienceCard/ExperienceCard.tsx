@@ -26,6 +26,7 @@ type ExperienceCardProps = {
     icon: string,
     institution: string,
     dates: Date,
+    color: string,
     location: string,
     title: string,
     description?: string,
@@ -38,6 +39,7 @@ export function ExperienceCard (
     {
         icon,
         dates,
+        color,
         institution,
         location,
         title,
@@ -47,69 +49,55 @@ export function ExperienceCard (
         technologies,
     }: ExperienceCardProps) {
 
-
     return (
         <motion.article
             className='experience-card'
-            initial={{ scale: 0.85 }}
-            whileInView={{ scale: 1 }}
+            initial={{ width: '70%' }}
+            whileInView={{ width: '100%'  }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 1.02 }}
             viewport={{ once: true }}>
-            <div className='experience-card__icon'>
-                {mapSVG(icon)}
+            <div className='experience-card__header' style={{backgroundColor: color}}>
+                <div className='experience-card__header--icon'>
+                    {mapSVG(icon)}
+                </div>
             </div>
 
-            <div className='experience-card__dates'>
-                <p>{dates.from} -
-                    <span className={`${isPresentDate(dates.to)}`}>
+            <motion.div
+                className='experience-card__info'
+                initial={{ left: '-250px' }}
+                whileInView={{ left: '0px' }}
+                viewport={{ once: true }}>
+                <h2 className='institution'>{institution}</h2>
+                <h4 className='title'>{title}</h4>
+                <p className='location'>{location}</p>
+                <div className='dates'>
+                    <p>{dates.from} -
+                        <span className={`${isPresentDate(dates.to)}`}>
                         {' ' + dates.to}
                     </span>
-                </p>
-            </div>
-
-            <div className='experience-card__header'>
-                <h2 className='institution highlighted'>{institution}</h2>
-                <p className='location'>{location}</p>
-            </div>
-
-            <div className='experience-card__description'>
-                <h3 className='title'>{title}</h3>
-                <p className='description'>{description}</p>
-            </div>
-
-            { projects &&
-                <div className='experience-card__projects'>
-                    { projects.map((project) =>
-                        <div className='experience-card-project' key={generateKey()}>
-                            <p className='experience-card-project__title'><b>{project.title}</b></p>
-                            <p className='experience-card-project__description'>{project.description}</p>
-                        </div>
-                    )}
+                    </p>
                 </div>
-            }
-
-            { grades &&
-                <div className='experience-card__grades'>
-                    { grades.map((grade) =>
-                        <p className='experience-card-grade' key={generateKey()}>
-                            {grade.type}: <span className={`${isGradeSet(grade.value)}`}>{' ' + grade.value}</span>
-                        </p>
-                    )}
-                </div>
-            }
-
-            { technologies &&
-                <>
-                    <div className='experience-card__description'>
-                        <h4 className='title'>Tech stack</h4>
-                    </div>
-                    <div className='experience-card__technologies'>
-                        { technologies.map((name) =>
-                            <p className='experience-card-technology' key={generateKey()}>{name}</p>
+                { !!description && <p className='description'>{description}</p> }
+                { grades &&
+                    <div className='grades'>
+                        { grades.map((grade) =>
+                            <p className='experience-card-grade' key={generateKey()}>
+                                {grade.type}: <span className={`${isGradeSet(grade.value)}`}>{' ' + grade.value}</span>
+                            </p>
                         )}
                     </div>
-                </>
-            }
-
+                }
+                { technologies &&
+                    <div className='technologies'>
+                        { technologies.map((name) =>
+                            <p className='technology' key={generateKey()}>
+                                {name}
+                            </p>
+                        )}
+                    </div>
+                }
+            </motion.div>
         </motion.article>
     );
 }

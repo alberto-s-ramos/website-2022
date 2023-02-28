@@ -22,7 +22,7 @@ export function Projects() {
     )
 
     return(
-        <section className='projects'>
+        <section id="projects" className='projects'>
             <div className='projects__title'>
                 <h2 className='highlighted'>Personal</h2> <br/>
                 <h1 className='highlighted'>Projects</h1>

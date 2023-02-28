@@ -6,7 +6,7 @@ $navbar-br: 10px;
 
 /* Light Theme Colors */
 $c-navbar-bg-light: $c-secondary-light !default;
-$c-navbar-link-light--onHover: $c-primary-light !default;
+$c-navbar-link-light--onHover: $c-secondary-light !default;
 $c-navbar-hamburger-icon-bg-light: $c-tertiary-light !default;
 $c-navbar-hamburger-layer-light: $c-secondary-light !default;
 
@@ -24,7 +24,7 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
   top: 0;
   z-index: 99;
   width: 90%;
-  max-width: $vw-large;
+  max-width: $vw-medium;
   margin: 20px;
   padding: 10px 20px;
   background-color: $c-navbar-bg-light;
@@ -32,11 +32,25 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
   box-shadow: 0 5px 20px  rgba(black, 0.15) ;
   transition: all 0s ease !important;
 
+  .current {
+    background: red;
+    border: 6px solid var(red);
+    border-radius: 5px;
+    height: 2.8rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateX(1.1em);
+    transform: translateX(1.1em);
+    transition: .5s,visibility 0s;
+    width: 3.8rem;
+  }
+
   &__links {
     display: none;
     position: absolute;
+    z-index: 2;
     top: 70px;
-    z-index: -1;
+    //z-index: -1;
     left: 0;
     width: 50%;
     height: auto;
@@ -218,8 +232,8 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
 /* -- Themes -- */
 /* Light */
 #light .navbar {
-  background-color: $c-navbar-bg-light;
-  border: 2px solid rgba($c-tertiary-light, 0.35);
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
 
   &__links {
     .selected { background-color: $c-navbar-link-light--onHover; }
@@ -242,8 +256,8 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
 
 /* Dark */
 #dark .navbar {
-  background-color: $c-navbar-bg-dark;
-  border: 2px solid rgba($c-tertiary-light, 0.1);
+  background-color: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
 
   &__links {
     .selected { background-color: $c-navbar-link-dark--onHover; }

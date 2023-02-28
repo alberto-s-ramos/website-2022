@@ -36,7 +36,7 @@ $c-chat-dark: $c-secondary-dark;
 
   &__hobbies {
     width: 100%;
-    margin-top: 70px;
+    margin-top: 0px;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
@@ -82,7 +82,7 @@ $c-chat-dark: $c-secondary-dark;
     color: $c-tertiary-light;
     align-self: center;
     margin-bottom: 20px;
-    font-size: $f-xxs;
+    //font-size: $f-xxs;
 
     b { font-size: $f-xxs; }
   }

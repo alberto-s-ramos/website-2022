@@ -1,47 +1,49 @@
-import React, {useState} from "react";
-import { NavLink } from "react-router-dom";
+import React, {ReactNode, useEffect, useRef, useState} from "react";
 import "./Navbar.scss";
 import { useTheme } from "../../context/ThemeContext";
+import { generateKey } from "../../utils/app.utils";
 
-export function Navbar() {
+type NavbarProps = {
+    sections: { id: string; title: string }[];
+    currentSection: string;
+    setCurrentSection: (sectionId: string) => void;
+}
+
+export function Navbar(props:NavbarProps) {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
     const {getTheme, toggleTheme} = useTheme();
+    const { sections, currentSection, setCurrentSection } = props;
+
+    const [activeSection, setActiveSection] = useState(null);
+
+    useEffect(() => {
+        console.log('activeSection', activeSection)
+    }, [activeSection]);
+
+    const handleNavClick = (sectionId:string) => {
+        setCurrentSection(sectionId);
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
+    const navLinks= sections.map(section =>
+        <li key={generateKey()}>
+            <a
+                className={currentSection === section.id ? 'navbar__item selected' : 'navbar__item'}
+                href={`#${section.id}`}
+                onClick={() => handleNavClick(section.id)}>
+                {section.title}
+            </a>
+        </li>
+);
+
 
     return (
         <nav className='navbar'>
             <ul className={`navbar__links ${isNavExpanded ? 'expanded' : ''}`}>
-                <li key='nav-link-1'>
-                    <NavLink className={({ isActive }) =>  isActive ? 'navbar__item selected' : 'navbar__item' }
-                             to="/"
-                             onClick={() => setIsNavExpanded(false)}
-                    >
-                        About
-                    </NavLink>
-                </li>
-                <li key='nav-link-2'>
-                    <NavLink className={({ isActive }) =>  isActive ? 'navbar__item selected' : 'navbar__item' }
-                             to="/experience"
-                             onClick={() => setIsNavExpanded(false)}
-                    >
-                        Experience
-                    </NavLink>
-                </li>
-               <li key='nav-link-3'>
-                   <NavLink className={({ isActive }) =>  isActive ? 'navbar__item selected' : 'navbar__item' }
-                            to="/projects"
-                            onClick={() => setIsNavExpanded(false)}
-                   >
-                       Projects
-                   </NavLink>
-               </li>
-               <li key='nav-link-4'>
-                   <NavLink className={({ isActive }) =>  isActive ? 'navbar__item selected' : 'navbar__item' }
-                            to="/contact"
-                            onClick={() => setIsNavExpanded(false)}
-                   >
-                       Contact
-                   </NavLink>
-               </li>
+                <>{navLinks}</>
             </ul>
             <button
                 className={`navbar__hamburger ${isNavExpanded ? 'expanded' : ''}`}
