@@ -1,5 +1,7 @@
-import React, {ReactNode, useEffect, useRef, useState} from "react";
+import React, { useState} from "react";
 import "./Navbar.scss";
+import { animateScroll } from "react-scroll";
+
 import { useTheme } from "../../context/ThemeContext";
 import { generateKey } from "../../utils/app.utils";
 
@@ -11,20 +13,16 @@ type NavbarProps = {
 
 export function Navbar(props:NavbarProps) {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
-    const {getTheme, toggleTheme} = useTheme();
+    const { getTheme, toggleTheme } = useTheme();
     const { sections, currentSection, setCurrentSection } = props;
-
-    const [activeSection, setActiveSection] = useState(null);
-
-    useEffect(() => {
-        console.log('activeSection', activeSection)
-    }, [activeSection]);
 
     const handleNavClick = (sectionId:string) => {
         setCurrentSection(sectionId);
         const section = document.getElementById(sectionId);
         if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
+            section.scrollIntoView(
+                { behavior: "smooth" }
+            );
         }
     };
 

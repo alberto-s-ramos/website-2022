@@ -6,6 +6,7 @@ import {
     mapSVG
 } from "./ExperienceCard.utils";
 import {generateKey} from "../../../utils/app.utils";
+import {useEffect, useState} from "react";
 
 type Project = {
     title:string
@@ -48,12 +49,11 @@ export function ExperienceCard (
         grades,
         technologies,
     }: ExperienceCardProps) {
-
     return (
         <motion.article
             className='experience-card'
-            initial={{ width: '70%' }}
-            whileInView={{ width: '100%'  }}
+            initial={{ left: '-50px' }}
+            whileInView={{ left: '0px' }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 1.02 }}
             viewport={{ once: true }}>

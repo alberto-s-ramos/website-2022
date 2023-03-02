@@ -7,22 +7,19 @@ import { Projects } from "../pages/projects/Projects";
 import { Contact } from "../pages/contact/Contact";
 import { Navbar } from "../components/navbar/Navbar";
 import { Footer } from "../components/footer/Footer";
-
 import './App.scss'
 
-type CurrentSectionProps = {
-    id: string;
-}
+const sections = [
+    { id: "about", title: "About" },
+    { id: "experience", title: "Experience" },
+    { id: "education", title: "Education" },
+    // { id: "projects", title: "Projects" },
+    { id: "contact", title: "Contact" },
+];
 
 function App() {
     const { getTheme } = useTheme();
     const [currentSection, setCurrentSection] = useState<string>('');
-    const sections = [
-        { id: "about", title: "About" },
-        { id: "experience", title: "Experience" },
-        { id: "education", title: "Education" },
-        { id: "projects", title: "Projects" },
-    ];
 
     useEffect(() => {
         if (getTheme() === 'dark') {
@@ -32,8 +29,21 @@ function App() {
         }
     }, [getTheme()]);
 
+    function handleScroll() {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+            const { top, bottom } = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (top < windowHeight * 0.2 && bottom > windowHeight * 0.2) {
+                setCurrentSection(section.id);
+            }
+        });
+    }
+
     useEffect(() => {
         setCurrentSection(sections[0].id);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
@@ -54,7 +64,7 @@ function App() {
                     <About/>
                     <Experience/>
                     {/*<Projects/>*/}
-                    {/*<Contact/>*/}
+                    <Contact/>
             </main>
             <Footer/>
         </Router>

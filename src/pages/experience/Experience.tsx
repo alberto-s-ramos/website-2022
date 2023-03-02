@@ -1,42 +1,47 @@
 import { profExperienceData, educationData } from './data/experienceData'
 import { motion } from 'framer-motion'
 import './Experience.scss'
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import { ExperienceCard } from "../../components/cards/experienceCard/ExperienceCard";
 import {isPresentDate, mapSVG} from "../../components/cards/experienceCard/ExperienceCard.utils";
 import { generateKey } from "../../utils/app.utils";
 
 export function Experience() {
 
+    const [experienceCards, setExperienceCards] = useState([]);
+    const [educationCards, setEducationCards] = useState([]);
+
+
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // @ts-ignore
+        setExperienceCards(profExperienceData.map((element, i) =>
+            <ExperienceCard
+                key={generateKey()}
+                icon={element.icon}
+                dates={element.dates}
+                color={element.color}
+                institution={element.institution}
+                location={element.location}
+                title={element.title}
+                description={element.description}
+                projects={element.projects}
+                technologies={element.technologies}/>
+        ))
+        // @ts-ignore
+        setEducationCards(educationData.map((element, i) =>
+            <ExperienceCard
+                key={generateKey()}
+                icon={element.icon}
+                dates={element.dates}
+                color={element.color}
+                institution={element.institution}
+                location={element.location}
+                title={element.title}
+                description={element.description}
+                grades={element.grades}/>
+        ))
     }, []);
 
-    const experienceCards = profExperienceData.map((element, i) =>
-        <ExperienceCard
-            key={generateKey()}
-            icon={element.icon}
-            dates={element.dates}
-            color={element.color}
-            institution={element.institution}
-            location={element.location}
-            title={element.title}
-            description={element.description}
-            projects={element.projects}
-            technologies={element.technologies}/>
-    )
-    const educationCards = educationData.map((element, i) =>
-        <ExperienceCard
-            key={generateKey()}
-            icon={element.icon}
-            dates={element.dates}
-            color={element.color}
-            institution={element.institution}
-            location={element.location}
-            title={element.title}
-            description={element.description}
-            grades={element.grades}/>
-    )
 
 
     return(

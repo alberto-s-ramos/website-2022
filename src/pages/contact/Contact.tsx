@@ -66,10 +66,6 @@ export function Contact() {
 
     return(
         <section id="contact" className='contact'>
-            <div className='contact__title'>
-                <h2 className='highlighted'>Let's get in</h2> <br/>
-                <h1 className='highlighted'>Touch</h1>
-            </div>
             <form className='contact__form' onSubmit={sendEmail} ref={form}>
                 <input
                     type='email'
@@ -113,7 +109,7 @@ export function Contact() {
 
                 <footer className='contact__footer'>
                     <button className="email__sendBtn" type="submit" disabled={sendingEmail} aria-label="Send Email">
-                        <span className='highlighted'>Send</span>
+                        <span>Send</span>
                     </button>
                     <ul className="contact__socials">
                         <li>
@@ -121,7 +117,6 @@ export function Contact() {
                                 <GithubIcon/>
                             </a>
                         </li>
-
                         <li>
                             <a href="https://www.linkedin.com/in/alberto-s-ramos/" aria-label="Linkedin" className="social" target="_blank" rel="noopener noreferrer" >
                                 <LinkedinIcon/>

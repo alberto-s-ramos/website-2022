@@ -1,4 +1,5 @@
 import './About.scss'
+import { motion } from 'framer-motion'
 import { chatMessages } from "./data/chatMessages"
 import { hobbiesData, hobbiesDataProps } from "./data/hobbiesData"
 import { HobbyCard } from "../../components/cards/hobbyCard/HobbyCard";
@@ -58,7 +59,12 @@ export function About() {
     return(
         <section id="about" className='about'>
             <div className='about__intro'>
-                {videoComponent}
+                <motion.div
+                    initial={{ scale: 0.75 }}
+                    whileInView={{ scale: 1  }}
+                    viewport={{ once: true }}>
+                    {videoComponent}
+                </motion.div>
                 <div className="chat">
                     <div className="chat-wrapper">
                         <span className="chat__date">Today {hour}</span>
