@@ -31,7 +31,6 @@ type ExperienceCardProps = {
     location: string,
     title: string,
     description?: string,
-    projects?: Array<Project>,
     grades?: Array<Grade>,
     technologies?: Array<String>,
 }
@@ -45,7 +44,6 @@ export function ExperienceCard (
         location,
         title,
         description,
-        projects,
         grades,
         technologies,
     }: ExperienceCardProps) {

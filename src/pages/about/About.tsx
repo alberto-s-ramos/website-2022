@@ -91,8 +91,6 @@ export function About() {
                     {hobbies}
                 </div>
             </div>
-
-
         </section>
     )
 }

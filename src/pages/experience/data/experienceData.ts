@@ -1,20 +1,20 @@
 export const profExperienceData = [
-    // {
-    //     id: '0',
-    //     icon: 'ic-tesla',
-    //     dates: {
-    //         from: 'May 2023',
-    //         to: 'Present',
-    //     },
-    //     color: '#E82127',
-    //     institution: 'Tesla',
-    //     location: 'Berlin, Germany',
-    //     title: 'Software Engineer',
-    //     description: 'Streamline factory operations by building world-class scalable software systems, decrease business costs, and solve engineering challenges from both development and support perspective.',
-    //     // technologies: [
-    //     //     'React', 'Typescript', 'Javascript', 'GraphQL', 'Redux', 'RxJS', 'HTML', 'CSS', 'SCSS', 'handlebars', 'node', 'AEM', 'Git'
-    //     // ]
-    // },
+    {
+        id: '0',
+        icon: 'ic-tesla',
+        dates: {
+            from: 'May 2023',
+            to: 'Present',
+        },
+        color: '#E82127',
+        institution: 'Tesla',
+        location: 'Berlin, Germany',
+        title: 'Software Engineer',
+        description: 'Streamline factory operations by building world-class scalable software systems, decrease business costs, and solve engineering challenges from both development and support perspective.',
+        // technologies: [
+        //     'React', 'Typescript', 'Javascript', 'GraphQL', 'Redux', 'RxJS', 'HTML', 'CSS', 'SCSS', 'handlebars', 'node', 'AEM', 'Git'
+        // ]
+    },
     {
         id: '1',
         icon: 'ic-netcentric',

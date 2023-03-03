@@ -1,0 +1,22 @@
+@import "../../styles/common/variables";
+@import "../../styles/common/constants";
+@import "../../styles/common/mixins";
+
+.skills {
+  width: 100%;
+  padding-top: 100px;
+
+  .skill-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: $vw-medium) {
+  .skills {
+    .skill-cards {
+      gap: 1rem;
+    }
+  }
+}

@@ -24,7 +24,6 @@ export function Experience() {
                 location={element.location}
                 title={element.title}
                 description={element.description}
-                projects={element.projects}
                 technologies={element.technologies}/>
         ))
         // @ts-ignore
@@ -41,8 +40,6 @@ export function Experience() {
                 grades={element.grades}/>
         ))
     }, []);
-
-
 
     return(
         <>
@@ -70,6 +67,5 @@ export function Experience() {
                 </div>
             </section>
         </>
-
     )
 }

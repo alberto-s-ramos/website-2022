@@ -8,12 +8,13 @@ import { Contact } from "../pages/contact/Contact";
 import { Navbar } from "../components/navbar/Navbar";
 import { Footer } from "../components/footer/Footer";
 import './App.scss'
+import {Skills} from "../pages/skills/Skills";
 
 const sections = [
     { id: "about", title: "About" },
     { id: "experience", title: "Experience" },
     { id: "education", title: "Education" },
-    // { id: "projects", title: "Projects" },
+    { id: "skills", title: "Skills" },
     { id: "contact", title: "Contact" },
 ];
 
@@ -64,6 +65,7 @@ function App() {
                     <About/>
                     <Experience/>
                     {/*<Projects/>*/}
+                    <Skills/>
                     <Contact/>
             </main>
             <Footer/>

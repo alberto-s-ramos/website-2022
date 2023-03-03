@@ -1,0 +1,25 @@
+@import "../../../styles/common/variables";
+@import "../../../styles/common/mixins";
+@import "../../../styles/common/constants";
+
+$cardPadding: 10px 15px;
+
+.skill-card {
+  @extend .card;
+  @include flex(center, center, row);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  padding: $cardPadding;
+  width: fit-content;
+
+  &__info {
+    @include flex(center, center, row);
+    gap: 10px;
+    border-radius: 8px;
+
+    img {
+      width: 25px;
+      height: 25px;
+      border-radius: 3px;
+    }
+  }
+}
