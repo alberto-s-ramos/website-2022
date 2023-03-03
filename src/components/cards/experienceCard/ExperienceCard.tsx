@@ -6,7 +6,8 @@ import {
     mapSVG
 } from "./ExperienceCard.utils";
 import {generateKey} from "../../../utils/app.utils";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import {SkillCard} from "../skillCard/SkillCard";
 
 type Project = {
     title:string
@@ -30,9 +31,10 @@ type ExperienceCardProps = {
     color: string,
     location: string,
     title: string,
-    description?: string,
+    description?: string[],
     grades?: Array<Grade>,
     technologies?: Array<String>,
+    skills?: Array<{ name:string, icon:string }>,
 }
 
 export function ExperienceCard (
@@ -46,6 +48,7 @@ export function ExperienceCard (
         description,
         grades,
         technologies,
+        skills
     }: ExperienceCardProps) {
     return (
         <motion.article
@@ -76,13 +79,28 @@ export function ExperienceCard (
                     </span>
                     </p>
                 </div>
-                { !!description && <p className='description'>{description}</p> }
+                { description && description.map(el =>
+                    <div className='description'>
+                        <p>{el}</p>
+                    </div>)
+                }
                 { grades &&
                     <div className='grades'>
                         { grades.map((grade) =>
                             <p className='experience-card-grade' key={generateKey()}>
                                 {grade.type}: <span className={`${isGradeSet(grade.value)}`}>{' ' + grade.value}</span>
                             </p>
+                        )}
+                    </div>
+                }
+                {
+                    skills &&
+                    <div className='skills'>
+                        { skills.map((skill) =>
+                                <SkillCard
+                                    key={generateKey()}
+                                    name={skill.name}
+                                    icon={skill.icon}/>
                         )}
                     </div>
                 }

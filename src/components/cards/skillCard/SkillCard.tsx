@@ -10,17 +10,23 @@ type SkillCardProps = {
 export const SkillCard = (props: SkillCardProps) => {
     const { name, icon } = props;
     return (
-        <article className='skill-card'>
+        <motion.article
+            className='skill-card'
+            initial={{ y: 20, opacity: 0.8, scale: 0.8 }}
+            whileInView={{ y: 0, opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.1 }}
+            viewport={{ once: true }}>
+
             <div className='skill-card__info'>
                 <motion.img
                     src={icon}
                     alt='Waving Emoji'
-                    initial={{ opacity: 0.5, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1  }}
+                    initial={{ scale: 0.75 }}
+                    whileInView={{ scale: 1  }}
                     viewport={{ once: true }}/>
-
                 <p>{name}</p>
             </div>
-        </article>
+        </motion.article>
     );
 };

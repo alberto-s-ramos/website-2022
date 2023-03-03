@@ -3,6 +3,7 @@ import './Skills.scss'
 import { SkillCard } from "../../components/cards/skillCard/SkillCard";
 import { skillsData } from "./data/skillsData";
 import { generateKey } from "../../utils/app.utils";
+import {motion} from "framer-motion";
 
 export const Skills = () => {
     const [skills, setSkills] = useState([]);
@@ -17,7 +18,12 @@ export const Skills = () => {
     }, []);
     return (
         <section id="skills" className='skills'>
-            <h1>Skills</h1>
+            <motion.h1
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1  }}
+                viewport={{ once: true }}>
+                Skills
+            </motion.h1>
             <div className='skill-cards'>
                 {skills}
             </div>

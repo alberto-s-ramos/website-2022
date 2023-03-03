@@ -44,42 +44,73 @@ $iconSize: 95px;
       padding-top: 0.5rem;
     }
 
+    .dates {
+      position: absolute;
+      top: -30px;
+      z-index: 3;
+      p, span {
+        color: white;
+      }
+    }
+
     .description,
     .grades {
       padding-top: 1rem;
+      @extend .card__info;
     }
 
-    .technologies {
+    .skills {
+      padding-top: 1rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
-      margin-top: 10px;
+      gap: 0.7rem;
+    }
+  }
+}
 
-      .technology {
-        @include flex(center, center, column);
-        background-color: $c-card-icon-bg-dark;
-        padding: 5px 10px;
-        border-radius: 5px;
+#dark .experience-card {
+  &__info {
+    .skills {
+      .skill-card {
+        background-color: rgba(62, 64, 72, 0.5);
       }
     }
   }
 }
 
-/* -- Themes -- */
-/* Light */
+#dark .experience-card,
 #light .experience-card {
   &__info {
-    .technologies {
-      .technology {
-        background-color: $c-secondary-light;
+    .dates {
+      p, span {
+        color: $c-primary-light;
       }
     }
-
   }
 }
 
 /* -- Breakpoints -- */
 @media (min-width: $vw-small) {
+  #dark .experience-card {
+    &__info {
+      .dates {
+        p, span {
+          color: $c-primary-light;
+        }
+      }
+    }
+  }
+
+  #light .experience-card {
+    &__info {
+      .dates {
+        p, span {
+          color: $c-primary-dark;
+        }
+      }
+    }
+  }
+
   .experience-card {
     &__header {
       position: absolute;
@@ -88,7 +119,6 @@ $iconSize: 95px;
 
       &--icon {
         position: absolute;
-
         left: 60px;
         top: 20px;
         img, svg {
@@ -100,7 +130,11 @@ $iconSize: 95px;
 
     &__info {
       padding: $cardPadding $cardPadding $cardPadding 125px;
-      max-width: 80%;
+      max-width: 90%;
+      .dates {
+        position: initial;
+        z-index: 0;
+      }
     }
   }
 }

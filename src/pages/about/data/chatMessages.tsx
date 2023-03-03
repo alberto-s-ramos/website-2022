@@ -18,14 +18,14 @@ export const chatMessages = [
                 'I hope this website allows you to get to know me a bit better.'
             ],
     },
-    // {
-    //     id: 3,
-    //     text:
-    //         [
-    //             'If you fancy shortcuts, here’s a less exciting way of presenting what I’ve been up to:',
-    //             <a className="custom-button" key={'chat_btn-1'} href='/assets/Resume.pdf' target='_blank' aria-label='Resume'>
-    //                 <span className='highlighted' key={'chat_highlighted-msg-7'}>Resume</span>
-    //             </a>,
-    //         ]
-    // }
+    {
+        id: 3,
+        text:
+            [
+                'Here’s a less exciting way of presenting what I’ve been up to:',
+                <a className="custom-button" key={'chat_btn-1'} href='/assets/Resume.pdf' target='_blank' aria-label='Resume'>
+                    Resume
+                </a>,
+            ]
+    }
 ];

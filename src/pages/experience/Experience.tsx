@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import './Experience.scss'
 import {useEffect, useState} from "react";
 import { ExperienceCard } from "../../components/cards/experienceCard/ExperienceCard";
-import {isPresentDate, mapSVG} from "../../components/cards/experienceCard/ExperienceCard.utils";
 import { generateKey } from "../../utils/app.utils";
 
 export function Experience() {
@@ -23,8 +22,7 @@ export function Experience() {
                 institution={element.institution}
                 location={element.location}
                 title={element.title}
-                description={element.description}
-                technologies={element.technologies}/>
+                description={element.description}/>
         ))
         // @ts-ignore
         setEducationCards(educationData.map((element, i) =>

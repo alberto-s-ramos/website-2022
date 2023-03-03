@@ -67,7 +67,13 @@ export function Contact() {
 
     return(
         <section id="contact" className='contact'>
-            <h1 className='contact__title'>Contact</h1>
+            <motion.h1
+                className='contact__title'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1  }}
+                viewport={{ once: true }}>
+                Contact
+            </motion.h1>
             <form className='contact__form' onSubmit={sendEmail} ref={form}>
                 <motion.img
                     className='contact__image'

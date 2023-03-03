@@ -10,10 +10,10 @@ export const profExperienceData = [
         institution: 'Tesla',
         location: 'Berlin, Germany',
         title: 'Software Engineer',
-        description: 'Streamline factory operations by building world-class scalable software systems, decrease business costs, and solve engineering challenges from both development and support perspective.',
-        // technologies: [
-        //     'React', 'Typescript', 'Javascript', 'GraphQL', 'Redux', 'RxJS', 'HTML', 'CSS', 'SCSS', 'handlebars', 'node', 'AEM', 'Git'
-        // ]
+        description: [
+            'As a software engineer, my main objective was to optimize factory operations by building scalable software systems. ',
+            'I worked to decrease business costs and tackled engineering challenges from both development and support perspectives. My efforts were aimed at streamlining operations and enhancing efficiency, ultimately resulting in increased productivity and improved business outcomes.'
+        ],
     },
     {
         id: '1',
@@ -26,10 +26,23 @@ export const profExperienceData = [
         institution: 'Cognizant Netcentric',
         location: 'Berlin, Germany',
         title: 'Frontend Developer',
-        description: 'Worked on projects from completely different industries — Adhesive technologies and Automotive — developing and maintaining their websites across multiple markets.',
-        technologies: [
-            'React', 'Typescript', 'Javascript', 'GraphQL', 'Redux', 'RxJS', 'HTML', 'CSS', 'SCSS', 'handlebars', 'node', 'AEM', 'Git'
-        ]
+        description: [
+            'As a frontend developer, I worked on diverse projects spanning different industries such as adhesive technologies and automotive.',
+            'My main responsibility was to develop, enhance, and maintain clients\' websites across multiple markets using various technologies such as AEM, React, Redux, TypeScript, and SCSS. ',
+        ],
+        // skills: [
+        //     { name: 'ReactJS', icon: '/assets/skills/ic-react.svg' },
+        //     { name: 'Typescript', icon: '/assets/skills/ic-typescript.svg' },
+        //     { name: 'Javascript', icon: '/assets/skills/ic-javascript.svg' },
+        //     { name: 'GraphQL', icon: '/assets/skills/ic-graphql.svg' },
+        //     { name: 'Redux', icon: '/assets/skills/ic-redux.svg' },
+        //     { name: 'HTML', icon: '/assets/skills/ic-html.svg' },
+        //     { name: 'CSS', icon: '/assets/skills/ic-css.svg' },
+        //     { name: 'SCSS', icon: '/assets/skills/ic-scss.svg' },
+        //     { name: 'AEM', icon: '/assets/skills/ic-aem.svg' },
+        //     { name: 'handlebars', icon: '/assets/skills/ic-hbs.svg' },
+        //     { name: 'Git', icon: '/assets/skills/ic-git.svg' },
+        // ]
     },
     {
         id: '2',
@@ -42,10 +55,23 @@ export const profExperienceData = [
         institution: 'Talkdesk',
         location: 'Lisbon, Portugal',
         title: 'Fullstack Developer',
-        description: 'Development and maintenance of a well-structured microservice system that supported the company’s digital communication channels.',
-        technologies: [
-            'Kotlin', 'Spring', 'Javascript', 'Typescript', 'React', 'Redux', 'node', 'Ruby', 'Postgres', 'MongoDB', 'Docker', 'node', 'Git'
-        ]
+        description: [
+            'As a Developer in the Digital Communications cluster, my role was to oversee all non-voice interactions between agents and clients, such as SMS, live chat, and email.',
+            'I was responsible for maintaining the cluster\'s well-structured microservice system and supporting the creation of new communication channels. This involved close collaborating with multiple teams across the company.'
+        ],
+        // skills: [
+        //     { name: 'Kotlin', icon: '/assets/skills/ic-kotlin.svg' },
+        //     { name: 'Spring', icon: '/assets/skills/ic-spring.svg' },
+        //     { name: 'Javascript', icon: '/assets/skills/ic-javascript.svg' },
+        //     { name: 'Typescript', icon: '/assets/skills/ic-typescript.svg' },
+        //     { name: 'React', icon: '/assets/skills/ic-react.svg' },
+        //     { name: 'Redux', icon: '/assets/skills/ic-redux.svg' },
+        //     { name: 'Ruby', icon: '/assets/skills/ic-ruby.svg' },
+        //     { name: 'Postgres', icon: '/assets/skills/ic-postgres.svg' },
+        //     { name: 'MongoDB', icon: '/assets/skills/ic-mongodb.svg' },
+        //     { name: 'Docker', icon: '/assets/skills/ic-docker.svg' },
+        //     { name: 'Git', icon: '/assets/skills/ic-git.svg' },
+        // ]
     },
 ]
 
@@ -61,7 +87,7 @@ export const educationData = [
         institution: 'Instituto Superior Técnico',
         location: 'Lisbon, Portugal',
         title: 'MSc Degree - Computer Science and Engineering',
-        description: 'Specialized in Game Development',
+        description: ['Specialized in Game Development'],
         grades: [
             {
                 type: 'Final Grade',
@@ -84,7 +110,7 @@ export const educationData = [
         institution: 'Aalto University',
         location: 'Helsinki, Finland',
         title: 'MSc Degree - Computer Science',
-        description: 'Exchange Program (one semester)',
+        description: ['Exchange Program (one semester)'],
         grades: [
             {
                 type: 'Final Grade',
