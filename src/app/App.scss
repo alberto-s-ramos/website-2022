@@ -36,6 +36,10 @@ button, p, span{
   font-weight: 500;
 }
 
+li {
+  list-style: none;
+}
+
 .app {
   @include flex(center, space-between, column);
   min-height: 93vH;

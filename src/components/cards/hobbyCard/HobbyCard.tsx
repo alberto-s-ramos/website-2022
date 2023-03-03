@@ -11,10 +11,12 @@ type HobbyCardProps = {
 export function HobbyCard({id, title, description, imgUrl}: HobbyCardProps) {
     return (
         <motion.article
-            initial={{ opacity: 0.75, scale: 0.75 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className='hobby'>
+            className='hobby'
+            initial={{ y: 50, opacity: 0.8, scale: 0.8 }}
+            whileInView={{ y: 0, opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 1.02 }}
+            viewport={{ once: true }}>
 
             <div className='hobby__icon'>
                 <img src={imgUrl} alt={title} loading='lazy'></img>

@@ -34,7 +34,7 @@ function App() {
         sections.forEach((section) => {
             const { top, bottom } = section.getBoundingClientRect();
             const windowHeight = window.innerHeight;
-            if (top < windowHeight * 0.2 && bottom > windowHeight * 0.2) {
+            if (top < windowHeight * 0.35 && bottom > windowHeight * 0.35) {
                 setCurrentSection(section.id);
             }
         });

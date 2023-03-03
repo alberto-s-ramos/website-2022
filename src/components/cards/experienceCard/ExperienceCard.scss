@@ -14,7 +14,7 @@ $iconSize: 95px;
   &__header {
     transition: all 0s ease !important;
     position: relative;
-    height: 60px;
+    height: 40px;
     width: 100%;
     z-index: 2;
 
@@ -22,13 +22,13 @@ $iconSize: 95px;
       position: absolute;
       right: -55px;
       transform: translateX(-50%);
-      top: 10px;
+      top: 5px;
       width: $iconSize;
       height: $iconSize;
 
       img, svg {
-        width: 78%;
-        height: 78%;
+        width: 70%;
+        height: 70%;
       }
     }
   }

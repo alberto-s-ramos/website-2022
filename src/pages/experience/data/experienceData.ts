@@ -1,4 +1,20 @@
 export const profExperienceData = [
+    // {
+    //     id: '0',
+    //     icon: 'ic-tesla',
+    //     dates: {
+    //         from: 'May 2023',
+    //         to: 'Present',
+    //     },
+    //     color: '#E82127',
+    //     institution: 'Tesla',
+    //     location: 'Berlin, Germany',
+    //     title: 'Software Engineer',
+    //     description: 'Streamline factory operations by building world-class scalable software systems, decrease business costs, and solve engineering challenges from both development and support perspective.',
+    //     // technologies: [
+    //     //     'React', 'Typescript', 'Javascript', 'GraphQL', 'Redux', 'RxJS', 'HTML', 'CSS', 'SCSS', 'handlebars', 'node', 'AEM', 'Git'
+    //     // ]
+    // },
     {
         id: '1',
         icon: 'ic-netcentric',
@@ -11,16 +27,6 @@ export const profExperienceData = [
         location: 'Berlin, Germany',
         title: 'Frontend Developer',
         description: 'Worked on projects from completely different industries — Adhesive technologies and Automotive — developing and maintaining their websites across multiple markets.',
-        projects: [
-            {
-                title: 'Automotive project',
-                description: 'Worked on the maintenance and operations team for the client’s websites, where I had to solve critical issues in very short timeframes. Also supported with the development of new features for their websites using React, Typescript, Redux and GraphQL.',
-            },
-            {
-                title: 'Adhesive technologies project',
-                description: 'Developed and enhanced the websites for the client’s Adhesive Technologies business unit. Had to work very close with the Backend team to build new functionalities on top of the Adobe Experience Manager (AEM) platform.',
-            }
-        ],
         technologies: [
             'React', 'Typescript', 'Javascript', 'GraphQL', 'Redux', 'RxJS', 'HTML', 'CSS', 'SCSS', 'handlebars', 'node', 'AEM', 'Git'
         ]
@@ -37,12 +43,6 @@ export const profExperienceData = [
         location: 'Lisbon, Portugal',
         title: 'Fullstack Developer',
         description: 'Development and maintenance of a well-structured microservice system that supported the company’s digital communication channels.',
-        projects: [
-            {
-                title: 'Digital Communication',
-                description: 'Worked on the Digital Communications cluster - responsible for all non-voice interactions between agent’s and clients (e.g. SMS, Livechat, Email). During my time here, I both maintained the existing microservices, and supported with the creation of entirely new communication channels - having to collaborate with multiple teams and clusters across the company.',
-            }
-        ],
         technologies: [
             'Kotlin', 'Spring', 'Javascript', 'Typescript', 'React', 'Redux', 'node', 'Ruby', 'Postgres', 'MongoDB', 'Docker', 'node', 'Git'
         ]

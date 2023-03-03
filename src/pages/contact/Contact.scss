@@ -7,12 +7,20 @@
 
   @include flex(flex-start, flex-start, column);
   width: 100%;
-  padding-top: 300px;
+  padding-top: 200px;
   position: relative;
-  max-width: 900px;
+  //max-width: 900px;
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    top: -190px;
+    right: -20px;
+    width: 200px;
+  }
 
   &__title {
-    @extend .section__two-line-title;
+    padding-left: 20px;
   }
 
   &__form {
@@ -27,7 +35,7 @@
     position: relative;
 
     &::before {
-      content : url(../../assets/emoji-waving.webp);
+      //content : url(../../assets/emoji-waving.webp);
       transform: scale(0.4);
       position: absolute;
       top: -294px;
@@ -186,14 +194,14 @@
 @media (min-width: $vw-xxs) {
   .contact {
     margin-top: 50px;
-    &__form {
-      &::before {
-        transform: scale(0.45);
-        right: -150px;
-        top: -194px;
-        z-index: 1;
-      }
+
+    &__image {
+      z-index: 2;
+      top: -68px;
+      right: -30px;
+      width: 180px;
     }
+
     .email__address, .email__subject {
       width: 70%;
     }
@@ -209,14 +217,15 @@
 
 @media (min-width: $vw-xs) {
   .contact {
-    &__form {
-      &::before {
-        transform: scale(0.65);
-        right: -130px;
-        top: -235px;
-        z-index: 1;
-      }
+    padding-top: 150px;
 
+    &__image {
+      top: -117px;
+      right: -30px;
+      width: 230px;
+    }
+
+    &__form {
       .email__address, .email__subject, .email__content {
         font-size: $f-xs;
       }
@@ -226,26 +235,20 @@
 
 @media (min-width: $vw-small) {
   .contact {
-    padding-top: 120px;
-
-    &__form {
-      &::before {
-        transform: scale(0.7);
-        right: -110px;
-        top: -245px;
-      }
+    &__image {
+      top: -147px;
+      right: -20px;
+      width: 260px;
     }
   }
 }
 
 @media (min-width: $vw-medium) {
   .contact {
-    &__form {
-      &::before {
-        transform: scale(0.8);
-        right: -80px;
-        top: -265px;
-      }
+    &__image {
+      top: -177px;
+      right: 0;
+      width: 290px;
     }
   }
 }

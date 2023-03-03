@@ -32,19 +32,6 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
   box-shadow: 0 5px 20px  rgba(black, 0.15) ;
   transition: all 0s ease !important;
 
-  .current {
-    background: red;
-    border: 6px solid var(red);
-    border-radius: 5px;
-    height: 2.8rem;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateX(1.1em);
-    transform: translateX(1.1em);
-    transition: .5s,visibility 0s;
-    width: 3.8rem;
-  }
-
   &__links {
     display: none;
     position: absolute;
@@ -59,7 +46,7 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: $navbar-br;
-    box-shadow: 0 5px 5px  rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 
     li {
       text-align: left;
@@ -236,7 +223,10 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
   backdrop-filter: blur(8px);
 
   &__links {
-    .selected { background-color: $c-navbar-link-light--onHover; }
+    .selected {
+      background-color: rgb(255, 255, 255);
+      border: 2px solid $c-secondary-dark;
+    }
     &::before { border-bottom-color: rgba($c-navbar-bg-light, 0.95); }
   }
 
@@ -244,7 +234,7 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
     background-color: rgba($c-navbar-bg-light, 0.85);
   }
 
-  &__item:hover { background-color: $c-navbar-link-light--onHover; }
+  &__item:hover { background-color: $c-primary-light; }
 
   &__hamburger {
     border-color: $c-primary-light;
@@ -260,7 +250,10 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
   backdrop-filter: blur(8px);
 
   &__links {
-    .selected { background-color: $c-navbar-link-dark--onHover; }
+    .selected {
+      background-color: rgba(255,255,255,0.15);
+      border: 2px solid $c-primary-light;
+    }
     &::before { border-bottom-color: rgba($c-navbar-bg-dark, 0.95) }
   }
 
@@ -268,7 +261,9 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
     background-color: rgba($c-navbar-bg-dark, 0.85)
   }
 
-  &__item:hover { background-color: $c-navbar-link-dark--onHover; }
+  &__item:hover {
+    background-color: rgba(255,255,255,0.15);
+  }
 
   &__hamburger {
     border-color: $c-navbar-hamburger-icon-bg-dark;
@@ -281,7 +276,6 @@ $c-navbar-hamburger-layer-dark: $c-secondary-dark;
 /* -- Breakpoints -- */
 @media (min-width: $vw-small) {
   .navbar {
-
     &__hamburger {
       display: none;
     }
