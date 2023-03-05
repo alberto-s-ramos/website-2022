@@ -1,18 +1,13 @@
-import './ExperienceCard.scss'
+import React from "react";
 import { motion } from 'framer-motion'
+import { SkillCard } from "../skillCard/SkillCard";
 import {
     isGradeSet,
     isPresentDate,
     mapSVG
 } from "./ExperienceCard.utils";
-import {generateKey} from "../../../utils/app.utils";
-import React, {useEffect, useState} from "react";
-import {SkillCard} from "../skillCard/SkillCard";
-
-type Project = {
-    title:string
-    description:string
-}
+import { generateKey } from "../../../utils/app.utils";
+import './ExperienceCard.scss'
 
 type Grade = {
     type:string
@@ -50,6 +45,7 @@ export function ExperienceCard (
         technologies,
         skills
     }: ExperienceCardProps) {
+
     return (
         <motion.article
             className='experience-card'
@@ -70,7 +66,7 @@ export function ExperienceCard (
                 whileInView={{ left: '0px' }}
                 viewport={{ once: true }}>
                 <h2 className='institution'>{institution}</h2>
-                <h4 className='title'>{title}</h4>
+                <h3 className='title'>{title}</h3>
                 <p className='location'>{location}</p>
                 <div className='dates'>
                     <p>{dates.from} -
@@ -79,39 +75,49 @@ export function ExperienceCard (
                     </span>
                     </p>
                 </div>
-                { description && description.map(el =>
-                    <div className='description'>
-                        <p>{el}</p>
-                    </div>)
+
+                { description &&
+                    <ul>
+                        { description.map(el =>
+                        <li key={generateKey()} className='description'>
+                            <p>{el}</p>
+                        </li>
+                        )}
+                    </ul>
                 }
                 { grades &&
-                    <div className='grades'>
+                    <ul className='grades'>
                         { grades.map((grade) =>
-                            <p className='experience-card-grade' key={generateKey()}>
-                                {grade.type}: <span className={`${isGradeSet(grade.value)}`}>{' ' + grade.value}</span>
-                            </p>
+                            <li key={generateKey()}>
+                                <p className='experience-card-grade' key={generateKey()}>
+                                    {grade.type}: <span className={`${isGradeSet(grade.value)}`}>{' ' + grade.value}</span>
+                                </p>
+                            </li>
                         )}
-                    </div>
+                    </ul>
                 }
-                {
-                    skills &&
-                    <div className='skills'>
+                { skills &&
+                    <ul className='skills'>
                         { skills.map((skill) =>
+                            <li key={generateKey()}>
                                 <SkillCard
                                     key={generateKey()}
                                     name={skill.name}
                                     icon={skill.icon}/>
+                            </li>
                         )}
-                    </div>
+                    </ul>
                 }
                 { technologies &&
-                    <div className='technologies'>
+                    <ul className='technologies'>
                         { technologies.map((name) =>
-                            <p className='technology' key={generateKey()}>
-                                {name}
-                            </p>
+                            <li key={generateKey()}>
+                                <p className='technology' key={generateKey()}>
+                                    {name}
+                                </p>
+                            </li>
                         )}
-                    </div>
+                    </ul>
                 }
             </motion.div>
         </motion.article>

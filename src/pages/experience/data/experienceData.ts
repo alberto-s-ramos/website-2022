@@ -1,20 +1,20 @@
 export const profExperienceData = [
-    {
-        id: '0',
-        icon: 'ic-tesla',
-        dates: {
-            from: 'May 2023',
-            to: 'Present',
-        },
-        color: '#E82127',
-        institution: 'Tesla',
-        location: 'Berlin, Germany',
-        title: 'Software Engineer',
-        description: [
-            'As a software engineer, my main objective was to optimize factory operations by building scalable software systems. ',
-            'I worked to decrease business costs and tackled engineering challenges from both development and support perspectives. My efforts were aimed at streamlining operations and enhancing efficiency, ultimately resulting in increased productivity and improved business outcomes.'
-        ],
-    },
+    // {
+    //     id: '0',
+    //     icon: 'ic-tesla',
+    //     dates: {
+    //         from: 'May 2023',
+    //         to: 'Present',
+    //     },
+    //     color: '#E82127',
+    //     institution: 'Tesla',
+    //     location: 'Berlin, Germany',
+    //     title: 'Software Engineer',
+    //     description: [
+    //         'As a software engineer, my main objective was to optimize factory operations by building scalable software systems. ',
+    //         'I worked to decrease business costs and tackled engineering challenges from both development and support perspectives. My efforts were aimed at streamlining operations and enhancing efficiency, ultimately resulting in increased productivity and improved business outcomes.'
+    //     ],
+    // },
     {
         id: '1',
         icon: 'ic-netcentric',

@@ -1,14 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import { useTheme } from "../context/ThemeContext";
-import { BrowserRouter as Router, Routes,  Route } from "react-router-dom";
 import { About } from "../pages/about/About";
 import { Experience } from "../pages/experience/Experience";
-import { Projects } from "../pages/projects/Projects";
 import { Contact } from "../pages/contact/Contact";
 import { Navbar } from "../components/navbar/Navbar";
 import { Footer } from "../components/footer/Footer";
+import { Skills } from "../pages/skills/Skills";
 import './App.scss'
-import {Skills} from "../pages/skills/Skills";
 
 const sections = [
     { id: "about", title: "About" },
@@ -18,7 +16,7 @@ const sections = [
     { id: "contact", title: "Contact" },
 ];
 
-function App() {
+function App(): ReactElement {
     const { getTheme } = useTheme();
     const [currentSection, setCurrentSection] = useState<string>('');
 
@@ -30,46 +28,20 @@ function App() {
         }
     }, [getTheme()]);
 
-    function handleScroll() {
-        const sections = document.querySelectorAll("section");
-        sections.forEach((section) => {
-            const { top, bottom } = section.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            if (top < windowHeight * 0.35 && bottom > windowHeight * 0.35) {
-                setCurrentSection(section.id);
-            }
-        });
-    }
-
-    useEffect(() => {
-        setCurrentSection(sections[0].id);
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
     return (
         <div className="app__container" id={getTheme()}>
-        <Router>
             <Navbar
                 sections={sections}
                 currentSection={currentSection}
                 setCurrentSection={setCurrentSection}
             />
             <main className='app' >
-                  {/*<Routes>*/}
-                  {/*    <Route path="/" element={<About/>} />*/}
-                  {/*    <Route path="/experience" element={<Experience/>} />*/}
-                  {/*    <Route path="/projects" element={<Projects/>} />*/}
-                  {/*    <Route path="/Contact" element={<Contact/>} />*/}
-                  {/*</Routes>*/}
-                    <About/>
+                <About/>
                     <Experience/>
-                    {/*<Projects/>*/}
                     <Skills/>
                     <Contact/>
             </main>
             <Footer/>
-        </Router>
         </div>
     )
 }

@@ -1,41 +1,41 @@
 import { profExperienceData, educationData } from './data/experienceData'
 import { motion } from 'framer-motion'
-import './Experience.scss'
-import {useEffect, useState} from "react";
+import { ReactElement, useEffect, useState} from "react";
 import { ExperienceCard } from "../../components/cards/experienceCard/ExperienceCard";
 import { generateKey } from "../../utils/app.utils";
+import './Experience.scss'
 
-export function Experience() {
-
-    const [experienceCards, setExperienceCards] = useState([]);
-    const [educationCards, setEducationCards] = useState([]);
-
+export function Experience(): ReactElement {
+    const [experienceCards, setExperienceCards] = useState<ReactElement[]>([]);
+    const [educationCards, setEducationCards] = useState<ReactElement[]>([]);
 
     useEffect(() => {
-        // @ts-ignore
-        setExperienceCards(profExperienceData.map((element, i) =>
-            <ExperienceCard
-                key={generateKey()}
-                icon={element.icon}
-                dates={element.dates}
-                color={element.color}
-                institution={element.institution}
-                location={element.location}
-                title={element.title}
-                description={element.description}/>
+        setExperienceCards(profExperienceData.map((element) =>
+            <li key={generateKey()}>
+                <ExperienceCard
+                    icon={element.icon}
+                    dates={element.dates}
+                    color={element.color}
+                    institution={element.institution}
+                    location={element.location}
+                    title={element.title}
+                    description={element.description}
+                />
+            </li>
         ))
-        // @ts-ignore
-        setEducationCards(educationData.map((element, i) =>
-            <ExperienceCard
-                key={generateKey()}
-                icon={element.icon}
-                dates={element.dates}
-                color={element.color}
-                institution={element.institution}
-                location={element.location}
-                title={element.title}
-                description={element.description}
-                grades={element.grades}/>
+
+        setEducationCards(educationData.map((element) =>
+            <li key={generateKey()}>
+                <ExperienceCard
+                    icon={element.icon}
+                    dates={element.dates}
+                    color={element.color}
+                    institution={element.institution}
+                    location={element.location}
+                    title={element.title}
+                    description={element.description}
+                    grades={element.grades}/>
+            </li>
         ))
     }, []);
 
@@ -48,9 +48,9 @@ export function Experience() {
                     viewport={{ once: true }}>
                     Experience
                 </motion.h1>
-                <div className='experience__cards'>
+                <ul className='experience__cards'>
                     {experienceCards}
-                </div>
+                </ul>
 
             </section>
             <section id="education" className='experience'>
@@ -60,9 +60,9 @@ export function Experience() {
                     viewport={{ once: true }}>
                     Education
                 </motion.h1>
-                <div className='experience__cards'>
+                <ul className='experience__cards'>
                     {educationCards}
-                </div>
+                </ul>
             </section>
         </>
     )

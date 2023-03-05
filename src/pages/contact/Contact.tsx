@@ -124,7 +124,7 @@ export function Contact() {
 
                 <footer className='contact__footer'>
                     <button className="email__sendBtn" type="submit" disabled={sendingEmail} aria-label="Send Email">
-                        <h3>Send</h3>
+                        Send
                     </button>
                     <ul className="contact__socials">
                         <li>

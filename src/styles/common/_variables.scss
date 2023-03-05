@@ -1,6 +1,3 @@
-/* Colors */
-$c-highlighted-text: linear-gradient(90deg, rgba(101,157,240,1) 0%, rgba(165,135,228,1) 100%);
-
 /* Light Theme */
 $c-primary-light: #FFFF;
 $c-secondary-light: #EBEBEB;
@@ -20,9 +17,9 @@ $c-text-primary-dark: #FFFF;
 /* Font Size */
 $f-xxs: 16px;
 $f-xs: 19px;
-$f-small: 26px;
-$f-medium: 33px;
-$f-large: 46px;
+$f-small: 22px;
+$f-medium: 28px;
+$f-large: 40px;
 $f-xl: 60px;
 
 /* Viewport */
@@ -43,4 +40,3 @@ $c-card-icon-bg-light: $c-primary-light !default;
 $c-card-icon-bg-dark: $c-primary-dark;
 
 $br-card: 10px;
-

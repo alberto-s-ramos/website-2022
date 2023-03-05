@@ -17,7 +17,6 @@ $c-chat-dark: $c-secondary-dark;
   @include fadeIn(0.3s);
 
   width: 100%;
-  margin: 25px;
   padding-top: 50px;
 
   .custom-button {
@@ -31,8 +30,8 @@ $c-chat-dark: $c-secondary-dark;
   }
 
   &__hobby-section {
-    width: 90%;
-    margin-top: 120px;
+    width: 100%;
+    padding-bottom: initial;
 
     .title {
       margin-bottom: 1rem;
@@ -57,7 +56,7 @@ $c-chat-dark: $c-secondary-dark;
 
 .chat {
   position: relative;
-  padding: 25px;
+  padding: 17px;
   height: 475px;
   width: 100%;
   border-radius: $chat-bubble-br;
@@ -95,18 +94,20 @@ $c-chat-dark: $c-secondary-dark;
     position: relative;
     margin: 8px 10px;
     font-weight: bold;
-    padding: 25px;
+    padding: 17px;
     border-radius: $chat-bubble-br;
     background-color: $c-chat-bubble-light;
+    z-index: 1;
 
     .custom-button {
       display: block;
       padding: 10px 35px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     h4 {
       display: inline;
+      width: 100%;
     }
 
     &::before {
@@ -119,6 +120,7 @@ $c-chat-dark: $c-secondary-dark;
       height: 0;
       transform: rotate(30deg);
       border-top-color: $c-chat-bubble-light;
+      z-index: -1;
     }
   }
 }
@@ -250,24 +252,8 @@ $c-chat-dark: $c-secondary-dark;
       height: 400px;
     }
 
-    &__hobby-section {
-      .hobbies {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-    }
-
     .chat__bubble span {
       font-size: $f-small;
-    }
-  }
-}
-
-@media (min-width: $vw-xl) {
-  .about {
-    &__hobby-section {
-      .hobbies {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
     }
   }
 }

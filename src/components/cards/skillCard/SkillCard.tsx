@@ -24,7 +24,9 @@ export const SkillCard = (props: SkillCardProps) => {
                     alt='Waving Emoji'
                     initial={{ scale: 0.75 }}
                     whileInView={{ scale: 1  }}
-                    viewport={{ once: true }}/>
+                    viewport={{ once: true }}
+                    loading='lazy'
+                />
                 <p>{name}</p>
             </div>
         </motion.article>

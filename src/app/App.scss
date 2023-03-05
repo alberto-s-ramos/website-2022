@@ -24,13 +24,15 @@ body, input, textarea {
   font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
+h1, h2, h3, h4, h5, h6, p, span, li, ul {
   margin-block-start: 0;
   margin-block-end: 0;
+  padding-inline-start: 0;
 }
 
 h1, h2,
 h3, h4,
+button,
 h4>span, h4>a>span,
 button, p, span{
   font-weight: 500;
@@ -38,6 +40,10 @@ button, p, span{
 
 li {
   list-style: none;
+}
+
+section {
+  padding: 40px 0;
 }
 
 section > h1 {
@@ -77,32 +83,36 @@ section > h1 {
     font-size: 15px !important;
   }
 }
+h1 { font-size: $f-small; }
+h2 { font-size: $f-xs; }
+h3 { font-size: $f-xxs; }
+p { font-size: $f-xxs; }
 
 /* -- Breakpoints -- */
 @media (min-width: $vw-xxs) {
   .app__container {  max-width: $vw-xxs; }
-  h4 { font-size: $f-xxs;}
   h1 { font-size: $f-medium; }
+  h2 { font-size: $f-small; }
+  h4, button { font-size: $f-xxs;}
 }
 
 @media (min-width: $vw-xs) {
   .app__container { max-width: $vw-xs; }
-  //h4 { font-size: $f-xs;}
 }
 
 @media (min-width: $vw-small) {
   .app { padding-top: 0; }
   .app__container { max-width: $vw-small; }
-
+  section {
+    padding: 50px 0;
+  }
 }
 
 @media (min-width: $vw-medium) {
   .app__container {  max-width: $vw-medium; }
   h1 { font-size: $f-large; }
-  h2 {  font-size: $f-small; }
-  h4 { font-size: $f-xs;}
+  h2 {  font-size: $f-medium; }
+  h3 { font-size: $f-small; }
+  h4, button { font-size: $f-xs;}
 }
 
-@media (min-width: $vw-large) {
-  .app__container { max-width: $vw-medium; }
-}

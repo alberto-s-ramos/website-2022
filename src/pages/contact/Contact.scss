@@ -7,9 +7,8 @@
 
   @include flex(flex-start, flex-start, column);
   width: 100%;
-  padding-top: 200px;
   position: relative;
-  //max-width: 900px;
+  padding-top: 110px;
 
   &__image {
     position: absolute;
@@ -35,7 +34,6 @@
     position: relative;
 
     &::before {
-      //content : url(../../assets/emoji-waving.webp);
       transform: scale(0.4);
       position: absolute;
       top: -294px;
@@ -193,7 +191,6 @@
 /* -- Breakpoints -- */
 @media (min-width: $vw-xxs) {
   .contact {
-    margin-top: 50px;
 
     &__image {
       z-index: 2;
@@ -217,7 +214,6 @@
 
 @media (min-width: $vw-xs) {
   .contact {
-    padding-top: 150px;
 
     &__image {
       top: -117px;

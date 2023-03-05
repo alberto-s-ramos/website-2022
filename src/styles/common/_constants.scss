@@ -1,13 +1,6 @@
 @import 'variables';
 @import "../common/mixins";
 
-.highlighted {
-    background-image: $c-highlighted-text;
-    color: transparent !important;
-    -webkit-background-clip: text;
-    display: inline;
-}
-
 span.contrast {
     font-weight: 600;
 }
@@ -33,24 +26,6 @@ span.low-contrast {
     }
 
     &:hover.disabled {  cursor: not-allowed; }
-}
-
-.section {
-    &__two-line-title {
-        h2, h1 {
-            margin-block-start: 0;
-            margin-block-end: 0;
-        }
-
-        h1 {
-            display: inline;
-        }
-        h2 {
-            position: relative;
-            margin-left: 2px;
-            top: 12px;
-        }
-    }
 }
 
 .card {
