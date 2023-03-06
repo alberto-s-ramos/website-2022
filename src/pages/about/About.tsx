@@ -1,39 +1,49 @@
-import './About.scss'
+import React, { ReactElement, useEffect, useState } from "react";
+import { motion } from 'framer-motion'
 import { chatMessages } from "./data/chatMessages"
 import { hobbiesData, hobbiesDataProps } from "./data/hobbiesData"
 import { HobbyCard } from "../../components/cards/hobbyCard/HobbyCard";
 import { useTheme } from "../../context/ThemeContext";
-import React, { useEffect } from "react";
+import { generateKey } from "../../utils/app.utils";
+import './About.scss'
 
 export function About() {
+    const [messages, setMessages] = useState<ReactElement[]>([]);
+    const [hobbies, setHobbies] = useState<ReactElement[]>([]);
+    const [currentHour, setCurrentHour] = useState<string>();
     const { getTheme } = useTheme();
     const today = new Date();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        setMessages(chatMessages.map((msg, index) => {
+            const timeToArrive = (index+1) * 700;
+            return (
+                <li key={generateKey()}>
+                    <motion.article
+                        className={`chat__bubble`}
+                        initial={{ left: `-${timeToArrive}` }}
+                        whileInView={{ left: '0px' }}
+                        viewport={{ once: true }}>
+                        <h4>{msg.text}</h4>
+                    </motion.article>
+                </li>
+            )
+        }))
+
+        setHobbies(hobbiesData.map((hobby: hobbiesDataProps, index) =>
+            <li key={generateKey()}>
+                <HobbyCard
+                    key={'hobby-'+index}
+                    id={hobby.id}
+                    title={hobby.title}
+                    description={hobby.description}
+                    imgUrl={hobby.imgUrl}
+                />
+            </li>
+        ))
+
+        setCurrentHour(`${today.getHours()}:${today.getMinutes() > 10 ? today.getMinutes() : '0'+today.getMinutes()}`)
     }, []);
-
-    const messages = chatMessages.map((msg, index) => {
-        const timeToArrive = msg.id * 1000 > 3000 ? 3000 : msg.id * 1000;
-        return (
-                <article
-                    className={`chat__bubble chat__bubble--${timeToArrive}`}
-                    key={'chat_bubble-'+index}>
-                    <h4>{msg.text}</h4>
-                </article>
-        )
-    })
-
-    const hobbies = hobbiesData.map((hobby: hobbiesDataProps, index) => (
-            <HobbyCard
-                key={'hobby-'+index}
-                id={hobby.id}
-                title={hobby.title}
-                description={hobby.description}
-                imgUrl={hobby.imgUrl}
-            />
-        )
-    )
 
     const videoComponent = getTheme() === 'light' ? (
         <React.Fragment key={`video_${getTheme()}`}>
@@ -53,28 +63,37 @@ export function About() {
         </React.Fragment>
     )
 
-    const hour = `${today.getHours()}:${today.getMinutes() > 10 ? today.getMinutes() : '0'+today.getMinutes()}`
-
     return(
-        <section className='about'>
+        <section id="about" className='about'>
             <div className='about__intro'>
-                {videoComponent}
+                <motion.div
+                    initial={{ scale: 0.75 }}
+                    whileInView={{ scale: 1  }}
+                    viewport={{ once: true }}>
+                    {videoComponent}
+                </motion.div>
                 <div className="chat">
                     <div className="chat-wrapper">
-                        <span className="chat__date"><b>Today</b> {hour}</span>
-                        {messages}
+                        <span className="chat__date">Today {currentHour}</span>
+                        <ul>
+                            {messages}
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div className='about__hobby-section'>
-                <h1 className='highlighted'>Hobbies</h1> <br/>
-                <h4 className='about__hobby-section__description'>When I’m not sitting on a gamer’s chair with dim light coding all day, here’s what I’m probably doing...</h4>
-            </div>
-
-            <div className='about__hobbies'>
-                {hobbies}
-            </div>
+            <section className='about__hobby-section'>
+                <motion.h1
+                    className='title'
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1  }}
+                    viewport={{ once: true }}>
+                    Hobbies
+                </motion.h1>
+                <ul className='hobbies'>
+                    {hobbies}
+                </ul>
+            </section>
         </section>
     )
 }

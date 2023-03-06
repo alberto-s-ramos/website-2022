@@ -1,4 +1,20 @@
 export const profExperienceData = [
+    // {
+    //     id: '0',
+    //     icon: 'ic-tesla',
+    //     dates: {
+    //         from: 'May 2023',
+    //         to: 'Present',
+    //     },
+    //     color: '#E82127',
+    //     institution: 'Tesla',
+    //     location: 'Berlin, Germany',
+    //     title: 'Software Engineer',
+    //     description: [
+    //         'As a software engineer, my main objective was to optimize factory operations by building scalable software systems. ',
+    //         'I worked to decrease business costs and tackled engineering challenges from both development and support perspectives. My efforts were aimed at streamlining operations and enhancing efficiency, ultimately resulting in increased productivity and improved business outcomes.'
+    //     ],
+    // },
     {
         id: '1',
         icon: 'ic-netcentric',
@@ -6,23 +22,27 @@ export const profExperienceData = [
             from: 'Mar 2022',
             to: 'Present',
         },
+        color: '#2C2E82',
         institution: 'Cognizant Netcentric',
         location: 'Berlin, Germany',
         title: 'Frontend Developer',
-        description: 'Worked on projects from completely different industries — Adhesive technologies and Automotive — developing and maintaining their websites across multiple markets.',
-        projects: [
-            {
-                title: 'Automotive project',
-                description: 'Worked on the maintenance and operations team for the client’s websites, where I had to solve critical issues in very short timeframes. Also supported with the development of new features for their websites using React, Typescript, Redux and GraphQL.',
-            },
-            {
-                title: 'Adhesive technologies project',
-                description: 'Developed and enhanced the websites for the client’s Adhesive Technologies business unit. Had to work very close with the Backend team to build new functionalities on top of the Adobe Experience Manager (AEM) platform.',
-            }
+        description: [
+            'As a frontend developer, I worked on diverse projects spanning different industries such as adhesive technologies and automotive.',
+            'My main responsibility was to develop, enhance, and maintain clients\' websites across multiple markets using various technologies such as AEM, React, Redux, TypeScript, and SCSS. ',
         ],
-        technologies: [
-            'React', 'Typescript', 'Javascript', 'GraphQL', 'Redux', 'RxJS', 'HTML', 'CSS', 'SCSS', 'handlebars', 'node', 'AEM', 'Git'
-        ]
+        // skills: [
+        //     { name: 'ReactJS', icon: '/assets/skills/ic-react.svg' },
+        //     { name: 'Typescript', icon: '/assets/skills/ic-typescript.svg' },
+        //     { name: 'Javascript', icon: '/assets/skills/ic-javascript.svg' },
+        //     { name: 'GraphQL', icon: '/assets/skills/ic-graphql.svg' },
+        //     { name: 'Redux', icon: '/assets/skills/ic-redux.svg' },
+        //     { name: 'HTML', icon: '/assets/skills/ic-html.svg' },
+        //     { name: 'CSS', icon: '/assets/skills/ic-css.svg' },
+        //     { name: 'SCSS', icon: '/assets/skills/ic-scss.svg' },
+        //     { name: 'AEM', icon: '/assets/skills/ic-aem.svg' },
+        //     { name: 'handlebars', icon: '/assets/skills/ic-hbs.svg' },
+        //     { name: 'Git', icon: '/assets/skills/ic-git.svg' },
+        // ]
     },
     {
         id: '2',
@@ -31,19 +51,27 @@ export const profExperienceData = [
             from: 'Jan 2021',
             to: 'Feb 2022',
         },
+        color: '#4B0EB0',
         institution: 'Talkdesk',
         location: 'Lisbon, Portugal',
         title: 'Fullstack Developer',
-        description: 'Development and maintenance of a well-structured microservice system that supported the company’s digital communication channels.',
-        projects: [
-            {
-                title: 'Digital Communication',
-                description: 'Worked on the Digital Communications cluster - responsible for all non-voice interactions between agent’s and clients (e.g. SMS, Livechat, Email). During my time here, I both maintained the existing microservices, and supported with the creation of entirely new communication channels - having to collaborate with multiple teams and clusters across the company.',
-            }
+        description: [
+            'As a Developer in the Digital Communications cluster, my role was to oversee all non-voice interactions between agents and clients, such as SMS, live chat, and email.',
+            'I was responsible for maintaining the cluster\'s well-structured microservice system and supporting the creation of new communication channels. This involved close collaborating with multiple teams across the company.'
         ],
-        technologies: [
-            'Kotlin', 'Spring', 'Javascript', 'Typescript', 'React', 'Redux', 'node', 'Ruby', 'Postgres', 'MongoDB', 'Docker', 'node', 'Git'
-        ]
+        // skills: [
+        //     { name: 'Kotlin', icon: '/assets/skills/ic-kotlin.svg' },
+        //     { name: 'Spring', icon: '/assets/skills/ic-spring.svg' },
+        //     { name: 'Javascript', icon: '/assets/skills/ic-javascript.svg' },
+        //     { name: 'Typescript', icon: '/assets/skills/ic-typescript.svg' },
+        //     { name: 'React', icon: '/assets/skills/ic-react.svg' },
+        //     { name: 'Redux', icon: '/assets/skills/ic-redux.svg' },
+        //     { name: 'Ruby', icon: '/assets/skills/ic-ruby.svg' },
+        //     { name: 'Postgres', icon: '/assets/skills/ic-postgres.svg' },
+        //     { name: 'MongoDB', icon: '/assets/skills/ic-mongodb.svg' },
+        //     { name: 'Docker', icon: '/assets/skills/ic-docker.svg' },
+        //     { name: 'Git', icon: '/assets/skills/ic-git.svg' },
+        // ]
     },
 ]
 
@@ -55,10 +83,11 @@ export const educationData = [
             from: 'Sep 2018',
             to: 'Feb 2022',
         },
+        color: '#007EDB',
         institution: 'Instituto Superior Técnico',
         location: 'Lisbon, Portugal',
         title: 'MSc Degree - Computer Science and Engineering',
-        description: 'Specialized in Game Development',
+        description: ['Specialized in Game Development'],
         grades: [
             {
                 type: 'Final Grade',
@@ -77,10 +106,11 @@ export const educationData = [
             from: 'Sep 2019',
             to: 'Dec 2019',
         },
+        color: '#064CFF',
         institution: 'Aalto University',
         location: 'Helsinki, Finland',
         title: 'MSc Degree - Computer Science',
-        description: 'Exchange Program (1 Semester)',
+        description: ['Exchange Program (one semester)'],
         grades: [
             {
                 type: 'Final Grade',
@@ -99,6 +129,7 @@ export const educationData = [
             from: 'Sep 2015',
             to: 'Jun 2018',
         },
+        color: '#1628B2',
         institution: 'ISCTE',
         location: 'Lisbon, Portugal',
         title: 'BSc Degree - Computer Science and Engineering',

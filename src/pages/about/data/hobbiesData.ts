@@ -30,12 +30,12 @@ export const hobbiesData = [
         description: 'A great escape into countless new worlds, ideas and perspectives.',
         imgUrl: '/assets/ic-emoji-book.webp'
     },
-    {
-        id: 5,
-        title: 'Gaming',
-        description: 'I enjoy playing video games every once in a while.',
-        imgUrl: '/assets/ic-emoji-gaming.webp'
-    },
+    // {
+    //     id: 5,
+    //     title: 'Gaming',
+    //     description: 'I enjoy playing video games every once in a while.',
+    //     imgUrl: '/assets/ic-emoji-gaming.webp'
+    // },
     {
         id: 6,
         title: 'Exercising',

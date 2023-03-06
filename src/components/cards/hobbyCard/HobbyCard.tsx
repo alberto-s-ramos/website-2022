@@ -8,13 +8,21 @@ type HobbyCardProps = {
     imgUrl: string
 }
 
-export function HobbyCard({id, title, description, imgUrl}: HobbyCardProps) {
+export function HobbyCard(props: HobbyCardProps) {
+    const {
+        title,
+        description,
+        imgUrl
+    } = props;
+
     return (
         <motion.article
-            initial={{ opacity: 0.75, scale: 0.75 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className='hobby'>
+            className='hobby'
+            initial={{ y: 25, opacity: 0.8, scale: 0.8 }}
+            whileInView={{ y: 0, opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 1.02 }}
+            viewport={{ once: true }}>
 
             <div className='hobby__icon'>
                 <img src={imgUrl} alt={title} loading='lazy'></img>

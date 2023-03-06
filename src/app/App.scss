@@ -16,39 +16,39 @@ body {
   margin-block-end: 0;
   margin-block-start: 0;
   transition: background-color 0s ease;
+  font-weight: 500;
+  scroll-behavior: smooth;
 }
 
 body, input, textarea {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
+h1, h2, h3, h4, h5, h6, p, span, li, ul {
   margin-block-start: 0;
   margin-block-end: 0;
+  padding-inline-start: 0;
 }
 
-h1, h2 {
-  font-weight: 800;
+h1, h2,
+h3, h4,
+button,
+h4>span, h4>a>span,
+button, p, span{
+  font-weight: 500;
 }
 
-h2 {
-  font-weight: 700;
+li {
+  list-style: none;
 }
 
-h4>span, h4>a>span {
-  font-weight: 600;
+section {
+  padding: 40px 0;
 }
 
-h3, h4, button, b {
-  font-weight: 600;
+section > h1 {
+  margin-bottom: 1rem;
 }
-
-p, span {
-  font-size: $f-xxs;
-  font-weight: 300;
-}
-
-h1 {  font-size: $f-large; }
 
 .app {
   @include flex(center, space-between, column);
@@ -83,43 +83,36 @@ h1 {  font-size: $f-large; }
     font-size: 15px !important;
   }
 }
+h1 { font-size: $f-small; }
+h2 { font-size: $f-xs; }
+h3 { font-size: $f-xxs; }
+p { font-size: $f-xxs; }
 
 /* -- Breakpoints -- */
 @media (min-width: $vw-xxs) {
   .app__container {  max-width: $vw-xxs; }
-  h4 { font-size: $f-xxs;}
-
+  h1 { font-size: $f-medium; }
+  h2 { font-size: $f-small; }
+  h4, button { font-size: $f-xxs;}
 }
 
 @media (min-width: $vw-xs) {
   .app__container { max-width: $vw-xs; }
-
-  h1 { font-size: $f-xl; }
-  h4 { font-size: $f-xs;}
 }
 
 @media (min-width: $vw-small) {
   .app { padding-top: 0; }
   .app__container { max-width: $vw-small; }
+  section {
+    padding: 50px 0;
+  }
 }
 
 @media (min-width: $vw-medium) {
   .app__container {  max-width: $vw-medium; }
-
-  h2 {  font-size: $f-small; }
+  h1 { font-size: $f-large; }
+  h2 {  font-size: $f-medium; }
+  h3 { font-size: $f-small; }
+  h4, button { font-size: $f-xs;}
 }
 
-@media (min-width: $vw-large) {
-  .app__container { max-width: $vw-medium; }
-
-  h1 { font-size: $f-xl; }
-  h2 { font-size: $f-medium; }
-  h4 { font-size: $f-small; }
-  p, span, span b, button { font-size: $f-xs; }
-}
-
-@media (min-width: $vw-xl) {
-  .app__container { max-width: $vw-large; }
-
-  h3 { font-size: $f-medium; }
-}

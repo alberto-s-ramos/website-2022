@@ -1,47 +1,44 @@
-import React, {useState} from "react";
-import { NavLink } from "react-router-dom";
+import React, {ReactElement, useEffect, useState} from "react";
 import "./Navbar.scss";
-import { useTheme } from "../../context/ThemeContext";
+import { Link } from "react-scroll";
 
-export function Navbar() {
+import { useTheme } from "../../context/ThemeContext";
+import { generateKey } from "../../utils/app.utils";
+
+type NavbarProps = {
+    sections: { id: string; title: string }[];
+    currentSection: string;
+    setCurrentSection: (sectionId: string) => void;
+}
+
+export function Navbar(props:NavbarProps) {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
-    const {getTheme, toggleTheme} = useTheme();
+    const [navLinks, setNavLinks] = useState<ReactElement[]>([])
+    const { getTheme, toggleTheme } = useTheme();
+    const { sections } = props;
+
+    useEffect(() => {
+        setNavLinks(sections.map(section =>
+            <li key={generateKey()}>
+                <Link
+                    href={`#${section.id}`}
+                    className='navbar__item'
+                    activeClass='selected'
+                    to={`${section.id}`}
+                    spy={true}
+                    smooth={true}
+                    offset={-200}
+                    duration={750}>
+                    {section.title}
+                </Link>
+            </li>
+        ))
+    },[]);
 
     return (
         <nav className='navbar'>
             <ul className={`navbar__links ${isNavExpanded ? 'expanded' : ''}`}>
-                <li key='nav-link-1'>
-                    <NavLink className={({ isActive }) =>  isActive ? 'navbar__item selected' : 'navbar__item' }
-                             to="/"
-                             onClick={() => setIsNavExpanded(false)}
-                    >
-                        About
-                    </NavLink>
-                </li>
-                <li key='nav-link-2'>
-                    <NavLink className={({ isActive }) =>  isActive ? 'navbar__item selected' : 'navbar__item' }
-                             to="/experience"
-                             onClick={() => setIsNavExpanded(false)}
-                    >
-                        Experience
-                    </NavLink>
-                </li>
-               <li key='nav-link-3'>
-                   <NavLink className={({ isActive }) =>  isActive ? 'navbar__item selected' : 'navbar__item' }
-                            to="/projects"
-                            onClick={() => setIsNavExpanded(false)}
-                   >
-                       Projects
-                   </NavLink>
-               </li>
-               <li key='nav-link-4'>
-                   <NavLink className={({ isActive }) =>  isActive ? 'navbar__item selected' : 'navbar__item' }
-                            to="/contact"
-                            onClick={() => setIsNavExpanded(false)}
-                   >
-                       Contact
-                   </NavLink>
-               </li>
+                {navLinks}
             </ul>
             <button
                 className={`navbar__hamburger ${isNavExpanded ? 'expanded' : ''}`}
@@ -51,7 +48,6 @@ export function Navbar() {
                 <span></span>
                 <span></span>
             </button>
-
             <label className='navbar__theme-switch'>
                 <input type="checkbox" aria-label='toggle theme' onClick={toggleTheme} defaultChecked={getTheme() === 'dark'}/>
                 <span className="slider round"></span>

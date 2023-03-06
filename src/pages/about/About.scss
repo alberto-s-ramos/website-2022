@@ -17,7 +17,7 @@ $c-chat-dark: $c-secondary-dark;
   @include fadeIn(0.3s);
 
   width: 100%;
-  margin: 25px;
+  padding-top: 50px;
 
   .custom-button {
     text-align: center;
@@ -30,18 +30,21 @@ $c-chat-dark: $c-secondary-dark;
   }
 
   &__hobby-section {
-    width: 90%;
-    margin-top: 90px;
-  }
-
-  &__hobbies {
     width: 100%;
-    margin-top: 70px;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    column-gap: 3em;
-    row-gap: 3em;
+    padding-bottom: initial;
+
+    .title {
+      margin-bottom: 1rem;
+    }
+
+    .hobbies {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      column-gap: 1.5rem;
+      row-gap: 1.5rem;
+    }
   }
 
   &__emoji-video {
@@ -53,7 +56,7 @@ $c-chat-dark: $c-secondary-dark;
 
 .chat {
   position: relative;
-  padding: 25px;
+  padding: 17px;
   height: 475px;
   width: 100%;
   border-radius: $chat-bubble-br;
@@ -82,7 +85,6 @@ $c-chat-dark: $c-secondary-dark;
     color: $c-tertiary-light;
     align-self: center;
     margin-bottom: 20px;
-    font-size: $f-xxs;
 
     b { font-size: $f-xxs; }
   }
@@ -92,18 +94,20 @@ $c-chat-dark: $c-secondary-dark;
     position: relative;
     margin: 8px 10px;
     font-weight: bold;
-    padding: 25px;
+    padding: 17px;
     border-radius: $chat-bubble-br;
     background-color: $c-chat-bubble-light;
+    z-index: 1;
 
     .custom-button {
       display: block;
       padding: 10px 35px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     h4 {
       display: inline;
+      width: 100%;
     }
 
     &::before {
@@ -116,46 +120,9 @@ $c-chat-dark: $c-secondary-dark;
       height: 0;
       transform: rotate(30deg);
       border-top-color: $c-chat-bubble-light;
-    }
-
-    &--1000 {
-      animation-name: send-message--1000;
-      animation-duration: 1s;
-    }
-    &--2000 {
-      animation-name: send-message--2000;
-      animation-duration: 2s;
-    }
-    &--3000 {
-      animation-name: send-message--3000;
-      animation-duration: 3s;
+      z-index: -1;
     }
   }
-}
-
-/* Animations */
-@keyframes send-message {
-  0% { @include moveX(-1000px); }
-  50% { @include moveX(-1000px); }
-  100% {  @include moveX(0); }
-}
-
-@keyframes send-message--1000 {
-  0% { @include moveX(-1000px); }
-  50% { @include moveX(-1000px); }
-  100% {  @include moveX(0); }
-}
-
-@keyframes send-message--2000 {
-  0% { @include moveX(-1000px); }
-  65% { @include moveX(-1000px); }
-  100% { @include moveX(0); }
-}
-
-@keyframes send-message--3000 {
-  0% { @include moveX(-1000px); }
-  80% { @include moveX(-1000px); }
-  100% { @include moveX(0); }
 }
 
 /* Scrollbar */
@@ -227,10 +194,9 @@ $c-chat-dark: $c-secondary-dark;
   .about {
     &__hobby-section {
       width: 100%;
-    }
-
-    &__hobbies {
-      grid-template-columns: 1fr 1fr;
+      .hobbies {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .chat__bubble span {
@@ -272,13 +238,9 @@ $c-chat-dark: $c-secondary-dark;
 @media (min-width: $vw-medium) {
   .about {
     &__hobby-section {
-      &__description {
-        width: 65%;
+      .hobbies {
+        grid-template-columns: 1fr 1fr 1fr;
       }
-    }
-
-    &__hobbies {
-      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 }
@@ -290,20 +252,8 @@ $c-chat-dark: $c-secondary-dark;
       height: 400px;
     }
 
-    &__hobbies {
-      grid-template-columns: 1fr 1fr;
-    }
-
     .chat__bubble span {
       font-size: $f-small;
-    }
-  }
-}
-
-@media (min-width: $vw-xl) {
-  .about {
-    &__hobbies {
-      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 }

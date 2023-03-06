@@ -3,6 +3,7 @@ import './Contact.scss'
 import { ReactComponent as LinkedinIcon } from '../../assets/svgs/ic-linkedin.svg'
 import { ReactComponent as GithubIcon } from '../../assets/svgs/ic-github.svg'
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion'
 
 export function Contact() {
     const [subjectText, setSubjectText] = useState('');
@@ -65,12 +66,22 @@ export function Contact() {
     }
 
     return(
-        <section className='contact'>
-            <div className='contact__title'>
-                <h2 className='highlighted'>Let's get in</h2> <br/>
-                <h1 className='highlighted'>Touch</h1>
-            </div>
+        <section id="contact" className='contact'>
+            <motion.h1
+                className='contact__title'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1  }}
+                viewport={{ once: true }}>
+                Contact
+            </motion.h1>
             <form className='contact__form' onSubmit={sendEmail} ref={form}>
+                <motion.img
+                    className='contact__image'
+                    src='/assets/emoji-waving.webp'
+                    alt='Waving Emoji'
+                    initial={{ opacity: 0.5, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1  }}
+                    viewport={{ once: true }}/>
                 <input
                     type='email'
                     name="email"
@@ -113,7 +124,7 @@ export function Contact() {
 
                 <footer className='contact__footer'>
                     <button className="email__sendBtn" type="submit" disabled={sendingEmail} aria-label="Send Email">
-                        <span className='highlighted'>Send</span>
+                        Send
                     </button>
                     <ul className="contact__socials">
                         <li>
@@ -121,7 +132,6 @@ export function Contact() {
                                 <GithubIcon/>
                             </a>
                         </li>
-
                         <li>
                             <a href="https://www.linkedin.com/in/alberto-s-ramos/" aria-label="Linkedin" className="social" target="_blank" rel="noopener noreferrer" >
                                 <LinkedinIcon/>

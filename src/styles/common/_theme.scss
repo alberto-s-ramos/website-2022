@@ -2,7 +2,7 @@
 
 /* -- Light -- */
 #light {
-  p, h1, h2, h3, h4, h5, h6, li, a {
+  p, h1, h2, h3, h4, h5, h6, li, a, button {
     color: $c-text-primary-light;
   }
 
@@ -10,7 +10,7 @@
 
 /* -- Dark -- */
 #dark {
-  p, h1, h2, h3, h4, h5, h6, li, a {
+  p, h1, h2, h3, h4, h5, h6, li, a, button {
     color: $c-text-primary-dark;
   }
 }

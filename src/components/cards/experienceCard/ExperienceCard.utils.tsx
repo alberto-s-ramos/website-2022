@@ -3,6 +3,7 @@ import {ReactComponent as TalkdeskIcon} from "../../../assets/svgs/ic-talkdesk.s
 import {ReactComponent as ISTIcon} from "../../../assets/svgs/ic-ist.svg";
 import {ReactComponent as AaltoIcon} from "../../../assets/svgs/ic-aalto.svg";
 import {ReactComponent as ISCTEIcon} from "../../../assets/svgs/ic-iscte.svg";
+import {ReactComponent as TeslaIcon} from "../../../assets/svgs/ic-tesla.svg";
 
 export const mapSVG = (logo: string) =>{
     switch(logo){
@@ -16,6 +17,8 @@ export const mapSVG = (logo: string) =>{
             return <AaltoIcon/>
         case "ic-iscte":
             return <ISCTEIcon/>
+        case "ic-tesla":
+            return <TeslaIcon/>
         default:
             return <TalkdeskIcon fill="transparent"/>
     }
