@@ -22,7 +22,7 @@ export function About() {
                     <motion.article
                         className={`chat__bubble`}
                         initial={{ left: `-${timeToArrive}` }}
-                        whileInView={{ left: '0px' }}
+                        animate={{ left: '0px' }}
                         viewport={{ once: true }}>
                         <h4>{msg.text}</h4>
                     </motion.article>
